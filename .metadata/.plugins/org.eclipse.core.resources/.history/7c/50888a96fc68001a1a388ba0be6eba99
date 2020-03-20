@@ -1,0 +1,42 @@
+grammar dk.klevang.MathInterpreter with org.eclipse.xtext.common.Terminals
+
+generate mathInterpreter "http://www.klevang.dk/MathInterpreter"
+
+MathExp:
+	'result' 'is' exp=Exp
+;
+
+Exp:
+	PlusOrMinus
+	
+;
+
+PlusOrMinus returns Exp:
+	MulOrDiv (
+		({Plus.left=current} '+' | {Minus.left=current} '-')
+		right=MulOrDiv
+	)*
+;
+
+MulOrDiv returns Exp:
+	Primary (
+		{MulOrDiv.left=current} op=('*' | '/')
+		right=Primary
+	)*
+;
+
+Primary returns Exp:
+	Number | Parenthesis
+;
+//
+Parenthesis:
+	'(' exp=Exp ')'
+;
+//
+Number:
+	value=INT
+;
+//
+//ExpOp:
+//	{Plus} '+' | {Minus} '-'	 | {Mult} '*' | {Div} '/'	
+//;

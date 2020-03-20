@@ -1,0 +1,28 @@
+grammar dk.klevang.MathInterpreter with org.eclipse.xtext.common.Terminals
+
+generate mathInterpreter "http://www.klevang.dk/MathInterpreter"
+
+MathExp:
+	'result' 'is' exp=Exp
+;
+
+Exp: // Illegal due to left recursion
+	right=Primary (operator=ExpOp left=Exp)?
+	
+;
+
+ExpOp:
+	{Plus} '+' | {Minus} '-'	 | {Mult} '*' | {Div} '/'	
+;
+
+Primary:
+	Number | Parenthesis
+;
+
+Parenthesis:
+	'(' exp=Exp ')'
+;
+
+Number:
+	value=INT
+;
