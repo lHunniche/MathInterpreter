@@ -41,7 +41,12 @@ public class MathInterpreterGenerator extends AbstractGenerator {
   public int computeExp(final Exp exp) {
     int _xblockexpression = (int) 0;
     {
-      final int right = this.computeRightSide(exp.getRight());
+      Exp _exp = exp.getExp();
+      boolean _tripleNotEquals = (_exp != null);
+      if (_tripleNotEquals) {
+        return this.computeExp(exp.getExp());
+      }
+      final int right = this.computeBranch(exp.getRight());
       System.out.print("Exp: ");
       System.out.println(exp);
       int _switchResult = (int) 0;
@@ -73,15 +78,43 @@ public class MathInterpreterGenerator extends AbstractGenerator {
         }
       }
       if (!_matched) {
-        _switchResult = this.computeRightSide(exp);
+        _switchResult = this.computeBranch(exp);
       }
       _xblockexpression = _switchResult;
     }
     return _xblockexpression;
   }
   
-  public int computeLeftSide(final Exp exp) {
-    return 0;
+  public int computeBranch(final Exp exp) {
+    if ((exp != null)) {
+      System.out.print("Branch: ");
+      System.out.println(exp);
+      boolean _matched = false;
+      if (exp instanceof Plus) {
+        _matched=true;
+        return this.computeExp(exp);
+      }
+      if (!_matched) {
+        if (exp instanceof Minus) {
+          _matched=true;
+          return this.computeExp(exp);
+        }
+      }
+      if (!_matched) {
+        if (exp instanceof Mult) {
+          _matched=true;
+          return this.computeExp(exp);
+        }
+      }
+      if (!_matched) {
+        if (exp instanceof Div) {
+          _matched=true;
+          return this.computeExp(exp);
+        }
+      }
+      return exp.getValue();
+    }
+    return (-1000);
   }
   
   public int computeRightSide(final Exp exp) {
@@ -96,33 +129,8 @@ public class MathInterpreterGenerator extends AbstractGenerator {
   public CharSequence display(final MathExp math) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("Math[");
-    CharSequence _displayExp = this.displayExp(math.getExp());
-    _builder.append(_displayExp);
-    _builder.append("]");
-    return _builder;
-  }
-  
-  public CharSequence displayExp(final Exp exp) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("Exp[");
-    Exp _left = exp.getLeft();
-    CharSequence _displayExp = null;
-    if (_left!=null) {
-      _displayExp=this.displayExp(_left);
-    }
-    _builder.append(_displayExp);
-    _builder.append(",");
-    String _displayOp = null;
-    if (exp!=null) {
-      _displayOp=this.displayOp(exp);
-    }
-    _builder.append(_displayOp);
-    _builder.append(",");
-    int _displayPrim = 0;
-    if (exp!=null) {
-      _displayPrim=this.displayPrim(exp, exp.getRight());
-    }
-    _builder.append(_displayPrim);
+    CharSequence _displayExp2 = this.displayExp2(math.getExp());
+    _builder.append(_displayExp2);
     _builder.append("]");
     return _builder;
   }
@@ -167,5 +175,36 @@ public class MathInterpreterGenerator extends AbstractGenerator {
       }
     }
     return _switchResult;
+  }
+  
+  public CharSequence displayExp2(final Exp exp) {
+    Exp _exp = exp.getExp();
+    boolean _tripleEquals = (_exp == null);
+    if (_tripleEquals) {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("Exp[");
+      Exp _left = exp.getLeft();
+      CharSequence _displayExp2 = null;
+      if (_left!=null) {
+        _displayExp2=this.displayExp2(_left);
+      }
+      _builder.append(_displayExp2);
+      _builder.append(",");
+      String _displayOp = null;
+      if (exp!=null) {
+        _displayOp=this.displayOp(exp);
+      }
+      _builder.append(_displayOp);
+      _builder.append(",");
+      int _displayPrim = 0;
+      if (exp!=null) {
+        _displayPrim=this.displayPrim(exp, exp.getRight());
+      }
+      _builder.append(_displayPrim);
+      _builder.append("]");
+      return _builder;
+    } else {
+      return this.displayExp2(exp.getExp());
+    }
   }
 }

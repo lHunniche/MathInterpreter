@@ -15,7 +15,9 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
-
+import static extension org.eclipse.emf.ecore.util.EcoreUtil.*
+import org.eclipse.xtext.ui.editor.hover.html.DefaultEObjectHoverProvider
+import org.eclipse.emf.ecore.EObject
 
 /**
  * Generates code from your model files on save.
@@ -44,8 +46,12 @@ class MathInterpreterGenerator extends AbstractGenerator {
 	}
 	
 	def int computeExp(Exp exp) {
-
-		val right = exp.right.computeRightSide
+		if (exp.getExp !== null)
+		{
+			return exp.getExp.computeExp
+		}
+		val right = exp.right.computeBranch
+		
 		System.out.print("Exp: ")
 		System.out.println(exp)
 		switch exp {
@@ -53,7 +59,7 @@ class MathInterpreterGenerator extends AbstractGenerator {
 			Minus: exp.left.computeExp - right
 			Mult: exp.left.computeExp * right
 			Div: exp.left.computeExp / right
-			default: exp.computeRightSide
+			default: exp.computeBranch
 		}
 	}
 	
@@ -67,9 +73,22 @@ class MathInterpreterGenerator extends AbstractGenerator {
 //		}
 //	}
 
-	def int computeLeftSide(Exp exp)
+	def int computeBranch(Exp exp)
 	{
-		0
+		if (exp !== null)
+		{
+			System.out.print("Branch: ")
+			System.out.println(exp)
+			switch exp {
+				Plus: return exp.computeExp
+				Minus: return exp.computeExp
+				Mult: return exp.computeExp
+				Div: return exp.computeExp
+				default: return exp.getValue()
+			}
+		}
+		return -1000
+
 	}
 	
 	def int computeRightSide(Exp exp)
@@ -89,12 +108,8 @@ class MathInterpreterGenerator extends AbstractGenerator {
 	// NAte: written according to illegal left-recursive grammar, requires fix
 	//
 
-	def CharSequence display(MathExp math) '''Math[«math.exp.displayExp»]'''
-	def CharSequence displayExp(Exp exp) '''Exp[«exp.left?.displayExp»,«exp?.displayOp»,«exp?.displayPrim(exp.right)»]'''
-	//def dispatch String displayOp(Plus op)  { "+" }
-	//def dispatch String displayOp(Minus op) { "-" }
-	//def dispatch String displayOp(Mult op) { "*" }
-	//def dispatch String displayOp(Div op) { "/" }
+	def CharSequence display(MathExp math) '''Math[«math.exp.displayExp2»]'''
+	//def CharSequence displayExp(Exp exp) '''Exp[«exp.left?.displayExp»,«exp?.displayOp»,«exp?.displayPrim(exp.right)»]'''
 	def CharSequence displayFactor(Exp primary) { "?" }
 	def displayPrim(Exp parent, Exp child)
 	{
@@ -117,16 +132,17 @@ class MathInterpreterGenerator extends AbstractGenerator {
 			Div: "/"
 		}
 	}
-//	def displayExp2(Exp exp)
-//	{
-//		switch exp {
-//			Plus: '''Exp[«exp.left?.displayExp»,«exp?.displayOp»,«exp.right?.displayPrim»]'''
-//			Minus: '''Exp[«exp.left?.displayExp»,«exp?.displayOp»,«exp.right?.displayPrim»]'''
-//			Mult: '''Exp[«exp.left?.displayExp»,«exp?.displayOp»,«exp.right?.displayPrim»]'''
-//			Div: '''Exp[«exp.left?.displayExp»,«exp?.displayOp»,«exp.right?.displayPrim»]'''
-//			default: exp.displayPrim
-//		}
-//	}
+	def CharSequence displayExp2(Exp exp)
+	{
+		if (exp.getExp() === null)
+		{
+			return '''Exp[«exp.left?.displayExp2»,«exp?.displayOp»,«exp?.displayPrim(exp.right)»]'''
+		}
+		else
+		{
+			return displayExp2(exp.getExp())
+		}
+	}
 	
 
 }

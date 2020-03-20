@@ -1,0 +1,12 @@
+public class ExpressionsEObjectHoverProvider extends DefaultEObjectHoverProvider {
+ 
+    @Override
+    protected String getFirstLine(EObject o) {
+        if (o instanceof Entity) {
+            return "this is a test hover: " + ((Entity)o).getName();
+        }
+        return super.getFirstLine(o);
+    }
+}
+
+

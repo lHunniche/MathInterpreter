@@ -1,0 +1,18 @@
+package dk.klevang;
+
+import dk.klevang.mathInterpreter.Exp
+import dk.klevang.mathInterpreter.MathExp
+import dk.klevang.mathInterpreter.Minus
+import dk.klevang.mathInterpreter.Plus
+import dk.klevang.mathInterpreter.Mult
+import dk.klevang.mathInterpreter.Div
+
+import javax.swing.JOptionPane
+import org.eclipse.emf.ecore.resource.Resource
+import org.eclipse.xtext.generator.AbstractGenerator
+import org.eclipse.xtext.generator.IFileSystemAccess2
+import org.eclipse.xtext.generator.IGeneratorContext
+import static extension org.eclipse.emf.ecore.util.EcoreUtil.*
+public class MyHoverClass {
+
+}

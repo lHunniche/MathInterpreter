@@ -1,0 +1,7 @@
+import static org.eclipse.emf.ecore.util.EcoreUtil.*;
+
+
+class ExpressionsEObjectHoverProvider extends DefaultEObjectHoverProvider {
+	@Inject extension ExpressionsTypeComputer
+	
+}

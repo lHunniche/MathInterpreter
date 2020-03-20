@@ -1,0 +1,17 @@
+package dk.klevang;
+
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.xtext.ui.editor.hover.html.DefaultEObjectHoverProvider;
+
+public class ExpressionsEObjectHoverProvider extends DefaultEObjectHoverProvider {
+ 
+    @Override
+    protected String getFirstLine(EObject o) {
+        if (o instanceof EObject) {
+            return "this is a test hover";
+        }
+        return super.getFirstLine(o);
+    }
+}
+
+

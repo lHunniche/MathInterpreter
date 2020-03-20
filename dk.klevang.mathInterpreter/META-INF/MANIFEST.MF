@@ -26,4 +26,5 @@ Export-Package: dk.klevang.mathInterpreter.impl,
  dk.klevang.mathInterpreter.util,
  dk.klevang,
  dk.klevang.mathInterpreter
-Import-Package: org.apache.log4j
+Import-Package: org.apache.log4j,
+ org.eclipse.xtext.ui.editor.hover.html

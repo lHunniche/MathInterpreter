@@ -1,0 +1,5 @@
+package dk.klevang;
+
+class ExpressionsEObjectHoverProvider {
+
+}
