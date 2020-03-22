@@ -23,35 +23,16 @@ import dk.klevang.mathInterpreter.Exp
 import com.google.inject.Inject
 import dk.klevang.generator.MathInterpreterGenerator
 import dk.klevang.mathInterpreter.MathExp
-import dk.klevang.mathInterpreter.Plus
-import dk.klevang.mathInterpreter.Minus
-import dk.klevang.mathInterpreter.Mult
-import dk.klevang.mathInterpreter.Div
 
 class MyHoverClass extends DefaultEObjectHoverProvider {
 	
 	@Inject extension MathInterpreterGenerator
 	override getHoverInfoAsHtml(EObject o) {
-//		if (o instanceof Exp) {
-//			val exp = o as Exp
-//			return '''
-//			<p>
-//			type: <b>int</b> <br>
-//			value: <b>«exp.computeExp(null)»</b
-//			</p>
-//			'''
-//		}
-//		else
-//		{
-//			return super.getHoverInfoAsHtml(o)
-//		}
-		
 		switch o {
 			Exp: handleExp(o)
 			default: return super.getHoverInfoAsHtml(o)
 		}
 	}
-	
 	
 	def handleExp(Exp exp)
 	{
@@ -89,5 +70,5 @@ class MyHoverClass extends DefaultEObjectHoverProvider {
 		}
 		
 	}
-	
 }
+

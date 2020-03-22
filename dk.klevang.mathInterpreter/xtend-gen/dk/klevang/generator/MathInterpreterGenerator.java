@@ -18,6 +18,7 @@ import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
+import org.eclipse.xtext.xbase.lib.InputOutput;
 
 /**
  * Generates code from your model files on save.
@@ -45,6 +46,10 @@ public class MathInterpreterGenerator extends AbstractGenerator {
         {
           final int left = this.compute(math.getLeft());
           var_list.put(math.getLeft().getMathVar().getExpVar(), Integer.valueOf(left));
+          String _expVar = math.getLeft().getMathVar().getExpVar();
+          String _plus = (_expVar + " = ");
+          String _plus_1 = (_plus + Integer.valueOf(left));
+          InputOutput.<String>println(_plus_1);
           _xblockexpression_1 = this.computeExp(math.getRight(), var_list);
         }
         _xifexpression = _xblockexpression_1;

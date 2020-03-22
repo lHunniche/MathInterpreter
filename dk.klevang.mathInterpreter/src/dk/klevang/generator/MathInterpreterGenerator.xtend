@@ -31,15 +31,10 @@ class MathInterpreterGenerator extends AbstractGenerator {
 		val math = resource.allContents.filter(MathExp).next
 		val result = math.compute
 		//System.out.println("Math expression = "+math.display)
-		// For +1 score, replace with hovering, see Bettini Chapter 8
 		JOptionPane.showMessageDialog(null, "result = "+result,"Math Language", JOptionPane.INFORMATION_MESSAGE)
 	}
 	
-	//
-	// Compute function: computes value of expression
-	// Note: written according to illegal left-recursive grammar, requires fix
-	//
-	
+
 	def int compute(MathExp math) {
 		
 		val var_list = newHashMap
@@ -48,6 +43,7 @@ class MathInterpreterGenerator extends AbstractGenerator {
 			//this is when we have a let binding followed by "in" ... "end" keywords
 			val left = math.left.compute
 			var_list.put(math.left.getMathVar.getExpVar, left)
+			println(math.left.getMathVar.getExpVar + " = " + left)
 			math.right.computeExp(var_list)
 		}	
 		else

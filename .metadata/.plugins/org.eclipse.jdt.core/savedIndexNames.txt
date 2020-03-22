@@ -45,7 +45,6 @@ INDEX VERSION 1.131+C:\GitHub\MathInterpreter\.metadata\.plugins\org.eclipse.jdt
 3421597620.index
 2492909726.index
 3544939813.index
-2819375800.index
 1272498887.index
 1067271310.index
 2899478204.index

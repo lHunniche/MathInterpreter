@@ -22,3 +22,6 @@ public class MathInterpreterUiModule extends AbstractMathInterpreterUiModule {
 		return MyHoverClass.class;
 	}
 }
+
+
+
