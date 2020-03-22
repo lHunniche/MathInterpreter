@@ -144,20 +144,8 @@ public class MathInterpreterGenerator extends AbstractGenerator {
       return exp.getValue();
     } else {
       final Integer variable = vars.get(exp.getExpVar());
-      if ((variable == null)) {
-        System.out.println("Variable is null, faaaaack");
-      }
       return (variable).intValue();
     }
-  }
-  
-  public int computeRightSide(final Exp exp) {
-    if ((exp != null)) {
-      System.out.print("Number: ");
-      System.out.println(exp);
-      return exp.getValue();
-    }
-    return (-1000);
   }
   
   public CharSequence display(final MathExp math) {

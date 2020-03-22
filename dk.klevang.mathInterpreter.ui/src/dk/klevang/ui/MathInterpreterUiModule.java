@@ -8,7 +8,6 @@ import org.eclipse.xtext.documentation.IEObjectDocumentationProvider;
 import org.eclipse.xtext.ui.editor.hover.IEObjectHoverProvider;
 
 import dk.klevang.ui.hover.MyHoverClass;
-import dk.klevang.ui.hover.MyHoverContent;
 
 /**
  * Use this class to register components to be used within the Eclipse IDE.
@@ -22,25 +21,4 @@ public class MathInterpreterUiModule extends AbstractMathInterpreterUiModule {
 	public Class<? extends IEObjectHoverProvider> bindIEObjectHoverProvider() {
 		return MyHoverClass.class;
 	}
-	
-	public Class<? extends IEObjectDocumentationProvider> bindIEObjectDocumentationProvider() {
-		return MyHoverContent.class;
-	}
 }
-
-
-//class MathInterpreterUiModule extends AbstractMathInterpreterUiModule {
-//	new(AbstractUIPlugin plugin) {
-//		super(plugin)
-//	}
-//	def Class<? extends IEObjectHoverProvider> bindIEObjectHoverProvider() {
-//		//System.exit(1)
-//    	return MyHoverClass
-//	}
-//	def Class<? extends IEObjectDocumentationProvider> bindIEObjectDocumentationProvider() {
-//    	//System.exit(1)
-//    	return MyHoverContent
-//	}
-//	
-//	
-//}

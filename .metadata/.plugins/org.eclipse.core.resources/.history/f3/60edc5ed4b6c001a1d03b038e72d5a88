@@ -1,0 +1,91 @@
+//package dk.klevang.ui.hover
+//
+//import org.eclipse.emf.ecore.EObject
+//import org.eclipse.xtext.ui.editor.hover.html.DefaultEObjectHoverProvider
+//
+//class MyHoverClass extends DefaultEObjectHoverProvider {
+//	
+//	override getFirstLine(EObject o)
+//	{
+//		System.out.println("Something!")
+//		return "Hej med dig!"
+//	}
+//	
+//}
+
+
+
+package dk.klevang.ui.hover
+
+import org.eclipse.emf.ecore.EObject
+import org.eclipse.xtext.ui.editor.hover.html.DefaultEObjectHoverProvider
+import dk.klevang.mathInterpreter.Exp
+import com.google.inject.Inject
+import dk.klevang.generator.MathInterpreterGenerator
+import dk.klevang.mathInterpreter.MathExp
+
+class MyHoverClass extends DefaultEObjectHoverProvider {
+	
+	@Inject extension MathInterpreterGenerator
+	override getHoverInfoAsHtml(EObject o) {
+//		if (o instanceof Exp) {
+//			val exp = o as Exp
+//			return '''
+//			<p>
+//			type: <b>int</b> <br>
+//			value: <b>«exp.computeExp(null)»</b
+//			</p>
+//			'''
+//		}
+//		else
+//		{
+//			return super.getHoverInfoAsHtml(o)
+//		}
+		
+		switch o {
+			MathExp: handleMathExp(o)
+			Exp: handleExp(o)
+			default: return super.getHoverInfoAsHtml(o)
+		}
+	}
+	
+	
+	def handleMathExp(MathExp math)
+	{
+//		return '''
+//		<p>
+//		type: <b>int</b> <br>
+//		value: <b>«math.compute»</b
+//		</p>
+//		'''
+		return '''
+		<p>MathExp!</p>
+		'''
+	}
+	def handleExp(Exp exp)
+	{
+		if (exp.getExpVar === null)
+		{
+			return '''
+			<p>
+			type: <b>int</b> <br>
+			value: <b>«exp.computeExp(null)»</b
+			</p>
+			'''
+		}
+		else
+		{
+			val math = exp.eContainer as MathExp
+			System.out.println("HOVER")
+			println(math)
+			return '''
+			<p>
+			type: <b>int</b> <br>
+			value: <b>«math.compute»</b
+			</p>
+			'''
+		}
+		
+	}
+	
+}

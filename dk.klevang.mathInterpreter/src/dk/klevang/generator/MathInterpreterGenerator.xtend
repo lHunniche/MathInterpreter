@@ -41,6 +41,7 @@ class MathInterpreterGenerator extends AbstractGenerator {
 	//
 	
 	def int compute(MathExp math) {
+		
 		val var_list = newHashMap
 		if (math.exp === null)
 		{
@@ -57,6 +58,7 @@ class MathInterpreterGenerator extends AbstractGenerator {
 	}
 	
 	def int computeExp(Exp exp, HashMap<String, Integer> vars) {
+		
 		if (exp.getExp !== null)
 		{
 			// this is for when the expression is "empty" and a parenthesis.
@@ -104,24 +106,8 @@ class MathInterpreterGenerator extends AbstractGenerator {
 		else
 		{
 			val variable = vars.get(exp.getExpVar())
-			if (variable === null)
-			{
-				System.out.println("Variable is null, faaaaack")
-			}
 			return variable
 		}
-	}
-	
-	def int computeRightSide(Exp exp)
-	{
-		if (exp !== null)
-		{
-			System.out.print("Number: ")
-			System.out.println(exp)
-			return exp.getValue()
-		}
-		return -1000
-		
 	}
 
 	//
