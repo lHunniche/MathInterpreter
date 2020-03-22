@@ -107,17 +107,20 @@ public class MathInterpreterSemanticSequencer extends AbstractDelegatingSemantic
 	 *     MulOrDiv.Div_1_0_1_0 returns Div
 	 *
 	 * Constraint:
-	 *     (left=MulOrDiv_Div_1_0_1_0 right=Primary)
+	 *     (left=MulOrDiv_Div_1_0_1_0 op='/' right=Primary)
 	 */
 	protected void sequence_MulOrDiv(ISerializationContext context, Div semanticObject) {
 		if (errorAcceptor != null) {
 			if (transientValues.isValueTransient(semanticObject, MathInterpreterPackage.Literals.EXP__LEFT) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MathInterpreterPackage.Literals.EXP__LEFT));
+			if (transientValues.isValueTransient(semanticObject, MathInterpreterPackage.Literals.DIV__OP) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MathInterpreterPackage.Literals.DIV__OP));
 			if (transientValues.isValueTransient(semanticObject, MathInterpreterPackage.Literals.EXP__RIGHT) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MathInterpreterPackage.Literals.EXP__RIGHT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getMulOrDivAccess().getDivLeftAction_1_0_1_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getMulOrDivAccess().getOpSolidusKeyword_1_0_1_1_0(), semanticObject.getOp());
 		feeder.accept(grammarAccess.getMulOrDivAccess().getRightPrimaryParserRuleCall_1_1_0(), semanticObject.getRight());
 		feeder.finish();
 	}
@@ -134,17 +137,20 @@ public class MathInterpreterSemanticSequencer extends AbstractDelegatingSemantic
 	 *     MulOrDiv.Div_1_0_1_0 returns Mult
 	 *
 	 * Constraint:
-	 *     (left=MulOrDiv_Mult_1_0_0_0 right=Primary)
+	 *     (left=MulOrDiv_Mult_1_0_0_0 op='*' right=Primary)
 	 */
 	protected void sequence_MulOrDiv(ISerializationContext context, Mult semanticObject) {
 		if (errorAcceptor != null) {
 			if (transientValues.isValueTransient(semanticObject, MathInterpreterPackage.Literals.EXP__LEFT) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MathInterpreterPackage.Literals.EXP__LEFT));
+			if (transientValues.isValueTransient(semanticObject, MathInterpreterPackage.Literals.MULT__OP) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MathInterpreterPackage.Literals.MULT__OP));
 			if (transientValues.isValueTransient(semanticObject, MathInterpreterPackage.Literals.EXP__RIGHT) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MathInterpreterPackage.Literals.EXP__RIGHT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getMulOrDivAccess().getMultLeftAction_1_0_0_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getMulOrDivAccess().getOpAsteriskKeyword_1_0_0_1_0(), semanticObject.getOp());
 		feeder.accept(grammarAccess.getMulOrDivAccess().getRightPrimaryParserRuleCall_1_1_0(), semanticObject.getRight());
 		feeder.finish();
 	}

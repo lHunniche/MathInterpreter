@@ -17,7 +17,11 @@
     </genClasses>
     <genClasses ecoreClass="MathInterpreter.ecore#//Plus"/>
     <genClasses ecoreClass="MathInterpreter.ecore#//Minus"/>
-    <genClasses ecoreClass="MathInterpreter.ecore#//Mult"/>
-    <genClasses ecoreClass="MathInterpreter.ecore#//Div"/>
+    <genClasses ecoreClass="MathInterpreter.ecore#//Mult">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MathInterpreter.ecore#//Mult/op"/>
+    </genClasses>
+    <genClasses ecoreClass="MathInterpreter.ecore#//Div">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MathInterpreter.ecore#//Div/op"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

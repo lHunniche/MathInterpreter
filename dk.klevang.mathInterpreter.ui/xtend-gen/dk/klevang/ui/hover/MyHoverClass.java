@@ -7,6 +7,6 @@ import org.eclipse.xtext.ui.editor.hover.html.DefaultEObjectHoverProvider;
 public class MyHoverClass extends DefaultEObjectHoverProvider {
   @Override
   public String getFirstLine(final EObject o) {
-    return "Hej!";
+    return "Hej med dig!";
   }
 }

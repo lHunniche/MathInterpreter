@@ -242,10 +242,20 @@ ruleMulOrDiv returns [EObject current=null]
 								$current);
 						}
 					)
-					otherlv_2='*'
-					{
-						newLeafNode(otherlv_2, grammarAccess.getMulOrDivAccess().getAsteriskKeyword_1_0_0_1());
-					}
+					(
+						(
+							lv_op_2_0='*'
+							{
+								newLeafNode(lv_op_2_0, grammarAccess.getMulOrDivAccess().getOpAsteriskKeyword_1_0_0_1_0());
+							}
+							{
+								if ($current==null) {
+									$current = createModelElement(grammarAccess.getMulOrDivRule());
+								}
+								setWithLastConsumed($current, "op", lv_op_2_0, "*");
+							}
+						)
+					)
 				)
 				    |
 				(
@@ -256,10 +266,20 @@ ruleMulOrDiv returns [EObject current=null]
 								$current);
 						}
 					)
-					otherlv_4='/'
-					{
-						newLeafNode(otherlv_4, grammarAccess.getMulOrDivAccess().getSolidusKeyword_1_0_1_1());
-					}
+					(
+						(
+							lv_op_4_0='/'
+							{
+								newLeafNode(lv_op_4_0, grammarAccess.getMulOrDivAccess().getOpSolidusKeyword_1_0_1_1_0());
+							}
+							{
+								if ($current==null) {
+									$current = createModelElement(grammarAccess.getMulOrDivRule());
+								}
+								setWithLastConsumed($current, "op", lv_op_4_0, "/");
+							}
+						)
+					)
 				)
 			)
 			(

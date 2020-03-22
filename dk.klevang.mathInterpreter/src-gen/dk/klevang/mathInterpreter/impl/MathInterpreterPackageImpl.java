@@ -248,9 +248,31 @@ public class MathInterpreterPackageImpl extends EPackageImpl implements MathInte
    * @generated
    */
   @Override
+  public EAttribute getMult_Op()
+  {
+    return (EAttribute)multEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getDiv()
   {
     return divEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getDiv_Op()
+  {
+    return (EAttribute)divEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -298,8 +320,10 @@ public class MathInterpreterPackageImpl extends EPackageImpl implements MathInte
     minusEClass = createEClass(MINUS);
 
     multEClass = createEClass(MULT);
+    createEAttribute(multEClass, MULT__OP);
 
     divEClass = createEClass(DIV);
+    createEAttribute(divEClass, DIV__OP);
   }
 
   /**
@@ -351,8 +375,10 @@ public class MathInterpreterPackageImpl extends EPackageImpl implements MathInte
     initEClass(minusEClass, Minus.class, "Minus", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(multEClass, Mult.class, "Mult", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getMult_Op(), ecorePackage.getEString(), "op", null, 0, 1, Mult.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(divEClass, Div.class, "Div", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getDiv_Op(), ecorePackage.getEString(), "op", null, 0, 1, Div.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

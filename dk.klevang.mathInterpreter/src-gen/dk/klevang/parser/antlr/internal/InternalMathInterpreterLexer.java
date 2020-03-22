@@ -209,10 +209,10 @@ public class InternalMathInterpreterLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMathInterpreter.g:405:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalMathInterpreter.g:405:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalMathInterpreter.g:425:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalMathInterpreter.g:425:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // InternalMathInterpreter.g:405:11: ( '^' )?
+            // InternalMathInterpreter.g:425:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -221,7 +221,7 @@ public class InternalMathInterpreterLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // InternalMathInterpreter.g:405:11: '^'
+                    // InternalMathInterpreter.g:425:11: '^'
                     {
                     match('^'); 
 
@@ -239,7 +239,7 @@ public class InternalMathInterpreterLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalMathInterpreter.g:405:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalMathInterpreter.g:425:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -288,10 +288,10 @@ public class InternalMathInterpreterLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMathInterpreter.g:407:10: ( ( '0' .. '9' )+ )
-            // InternalMathInterpreter.g:407:12: ( '0' .. '9' )+
+            // InternalMathInterpreter.g:427:10: ( ( '0' .. '9' )+ )
+            // InternalMathInterpreter.g:427:12: ( '0' .. '9' )+
             {
-            // InternalMathInterpreter.g:407:12: ( '0' .. '9' )+
+            // InternalMathInterpreter.g:427:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -305,7 +305,7 @@ public class InternalMathInterpreterLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // InternalMathInterpreter.g:407:13: '0' .. '9'
+            	    // InternalMathInterpreter.g:427:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -337,10 +337,10 @@ public class InternalMathInterpreterLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMathInterpreter.g:409:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // InternalMathInterpreter.g:409:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalMathInterpreter.g:429:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalMathInterpreter.g:429:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // InternalMathInterpreter.g:409:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalMathInterpreter.g:429:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -358,10 +358,10 @@ public class InternalMathInterpreterLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // InternalMathInterpreter.g:409:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalMathInterpreter.g:429:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // InternalMathInterpreter.g:409:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalMathInterpreter.g:429:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -377,7 +377,7 @@ public class InternalMathInterpreterLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // InternalMathInterpreter.g:409:21: '\\\\' .
+                    	    // InternalMathInterpreter.g:429:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -385,7 +385,7 @@ public class InternalMathInterpreterLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalMathInterpreter.g:409:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalMathInterpreter.g:429:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -410,10 +410,10 @@ public class InternalMathInterpreterLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalMathInterpreter.g:409:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalMathInterpreter.g:429:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // InternalMathInterpreter.g:409:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalMathInterpreter.g:429:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -429,7 +429,7 @@ public class InternalMathInterpreterLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // InternalMathInterpreter.g:409:54: '\\\\' .
+                    	    // InternalMathInterpreter.g:429:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -437,7 +437,7 @@ public class InternalMathInterpreterLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalMathInterpreter.g:409:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalMathInterpreter.g:429:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -480,12 +480,12 @@ public class InternalMathInterpreterLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMathInterpreter.g:411:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalMathInterpreter.g:411:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalMathInterpreter.g:431:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalMathInterpreter.g:431:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalMathInterpreter.g:411:24: ( options {greedy=false; } : . )*
+            // InternalMathInterpreter.g:431:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -510,7 +510,7 @@ public class InternalMathInterpreterLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // InternalMathInterpreter.g:411:52: .
+            	    // InternalMathInterpreter.g:431:52: .
             	    {
             	    matchAny(); 
 
@@ -540,12 +540,12 @@ public class InternalMathInterpreterLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMathInterpreter.g:413:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalMathInterpreter.g:413:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalMathInterpreter.g:433:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalMathInterpreter.g:433:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalMathInterpreter.g:413:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalMathInterpreter.g:433:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -558,7 +558,7 @@ public class InternalMathInterpreterLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalMathInterpreter.g:413:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalMathInterpreter.g:433:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -578,7 +578,7 @@ public class InternalMathInterpreterLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalMathInterpreter.g:413:40: ( ( '\\r' )? '\\n' )?
+            // InternalMathInterpreter.g:433:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -587,9 +587,9 @@ public class InternalMathInterpreterLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // InternalMathInterpreter.g:413:41: ( '\\r' )? '\\n'
+                    // InternalMathInterpreter.g:433:41: ( '\\r' )? '\\n'
                     {
-                    // InternalMathInterpreter.g:413:41: ( '\\r' )?
+                    // InternalMathInterpreter.g:433:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -598,7 +598,7 @@ public class InternalMathInterpreterLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // InternalMathInterpreter.g:413:41: '\\r'
+                            // InternalMathInterpreter.g:433:41: '\\r'
                             {
                             match('\r'); 
 
@@ -630,10 +630,10 @@ public class InternalMathInterpreterLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMathInterpreter.g:415:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalMathInterpreter.g:415:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalMathInterpreter.g:435:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalMathInterpreter.g:435:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalMathInterpreter.g:415:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalMathInterpreter.g:435:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -687,8 +687,8 @@ public class InternalMathInterpreterLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMathInterpreter.g:417:16: ( . )
-            // InternalMathInterpreter.g:417:18: .
+            // InternalMathInterpreter.g:437:16: ( . )
+            // InternalMathInterpreter.g:437:18: .
             {
             matchAny(); 
 

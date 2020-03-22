@@ -536,12 +536,12 @@ public class InternalMathInterpreterParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMulOrDiv"
-    // InternalMathInterpreter.g:219:1: ruleMulOrDiv returns [EObject current=null] : (this_Primary_0= rulePrimary ( ( ( () otherlv_2= '*' ) | ( () otherlv_4= '/' ) ) ( (lv_right_5_0= rulePrimary ) ) )* ) ;
+    // InternalMathInterpreter.g:219:1: ruleMulOrDiv returns [EObject current=null] : (this_Primary_0= rulePrimary ( ( ( () ( (lv_op_2_0= '*' ) ) ) | ( () ( (lv_op_4_0= '/' ) ) ) ) ( (lv_right_5_0= rulePrimary ) ) )* ) ;
     public final EObject ruleMulOrDiv() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_2=null;
-        Token otherlv_4=null;
+        Token lv_op_2_0=null;
+        Token lv_op_4_0=null;
         EObject this_Primary_0 = null;
 
         EObject lv_right_5_0 = null;
@@ -551,11 +551,11 @@ public class InternalMathInterpreterParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMathInterpreter.g:225:2: ( (this_Primary_0= rulePrimary ( ( ( () otherlv_2= '*' ) | ( () otherlv_4= '/' ) ) ( (lv_right_5_0= rulePrimary ) ) )* ) )
-            // InternalMathInterpreter.g:226:2: (this_Primary_0= rulePrimary ( ( ( () otherlv_2= '*' ) | ( () otherlv_4= '/' ) ) ( (lv_right_5_0= rulePrimary ) ) )* )
+            // InternalMathInterpreter.g:225:2: ( (this_Primary_0= rulePrimary ( ( ( () ( (lv_op_2_0= '*' ) ) ) | ( () ( (lv_op_4_0= '/' ) ) ) ) ( (lv_right_5_0= rulePrimary ) ) )* ) )
+            // InternalMathInterpreter.g:226:2: (this_Primary_0= rulePrimary ( ( ( () ( (lv_op_2_0= '*' ) ) ) | ( () ( (lv_op_4_0= '/' ) ) ) ) ( (lv_right_5_0= rulePrimary ) ) )* )
             {
-            // InternalMathInterpreter.g:226:2: (this_Primary_0= rulePrimary ( ( ( () otherlv_2= '*' ) | ( () otherlv_4= '/' ) ) ( (lv_right_5_0= rulePrimary ) ) )* )
-            // InternalMathInterpreter.g:227:3: this_Primary_0= rulePrimary ( ( ( () otherlv_2= '*' ) | ( () otherlv_4= '/' ) ) ( (lv_right_5_0= rulePrimary ) ) )*
+            // InternalMathInterpreter.g:226:2: (this_Primary_0= rulePrimary ( ( ( () ( (lv_op_2_0= '*' ) ) ) | ( () ( (lv_op_4_0= '/' ) ) ) ) ( (lv_right_5_0= rulePrimary ) ) )* )
+            // InternalMathInterpreter.g:227:3: this_Primary_0= rulePrimary ( ( ( () ( (lv_op_2_0= '*' ) ) ) | ( () ( (lv_op_4_0= '/' ) ) ) ) ( (lv_right_5_0= rulePrimary ) ) )*
             {
 
             			newCompositeNode(grammarAccess.getMulOrDivAccess().getPrimaryParserRuleCall_0());
@@ -569,7 +569,7 @@ public class InternalMathInterpreterParser extends AbstractInternalAntlrParser {
             			current = this_Primary_0;
             			afterParserOrEnumRuleCall();
             		
-            // InternalMathInterpreter.g:235:3: ( ( ( () otherlv_2= '*' ) | ( () otherlv_4= '/' ) ) ( (lv_right_5_0= rulePrimary ) ) )*
+            // InternalMathInterpreter.g:235:3: ( ( ( () ( (lv_op_2_0= '*' ) ) ) | ( () ( (lv_op_4_0= '/' ) ) ) ) ( (lv_right_5_0= rulePrimary ) ) )*
             loop4:
             do {
                 int alt4=2;
@@ -582,9 +582,9 @@ public class InternalMathInterpreterParser extends AbstractInternalAntlrParser {
 
                 switch (alt4) {
             	case 1 :
-            	    // InternalMathInterpreter.g:236:4: ( ( () otherlv_2= '*' ) | ( () otherlv_4= '/' ) ) ( (lv_right_5_0= rulePrimary ) )
+            	    // InternalMathInterpreter.g:236:4: ( ( () ( (lv_op_2_0= '*' ) ) ) | ( () ( (lv_op_4_0= '/' ) ) ) ) ( (lv_right_5_0= rulePrimary ) )
             	    {
-            	    // InternalMathInterpreter.g:236:4: ( ( () otherlv_2= '*' ) | ( () otherlv_4= '/' ) )
+            	    // InternalMathInterpreter.g:236:4: ( ( () ( (lv_op_2_0= '*' ) ) ) | ( () ( (lv_op_4_0= '/' ) ) ) )
             	    int alt3=2;
             	    int LA3_0 = input.LA(1);
 
@@ -602,10 +602,10 @@ public class InternalMathInterpreterParser extends AbstractInternalAntlrParser {
             	    }
             	    switch (alt3) {
             	        case 1 :
-            	            // InternalMathInterpreter.g:237:5: ( () otherlv_2= '*' )
+            	            // InternalMathInterpreter.g:237:5: ( () ( (lv_op_2_0= '*' ) ) )
             	            {
-            	            // InternalMathInterpreter.g:237:5: ( () otherlv_2= '*' )
-            	            // InternalMathInterpreter.g:238:6: () otherlv_2= '*'
+            	            // InternalMathInterpreter.g:237:5: ( () ( (lv_op_2_0= '*' ) ) )
+            	            // InternalMathInterpreter.g:238:6: () ( (lv_op_2_0= '*' ) )
             	            {
             	            // InternalMathInterpreter.g:238:6: ()
             	            // InternalMathInterpreter.g:239:7: 
@@ -618,10 +618,28 @@ public class InternalMathInterpreterParser extends AbstractInternalAntlrParser {
 
             	            }
 
-            	            otherlv_2=(Token)match(input,15,FOLLOW_4); 
+            	            // InternalMathInterpreter.g:245:6: ( (lv_op_2_0= '*' ) )
+            	            // InternalMathInterpreter.g:246:7: (lv_op_2_0= '*' )
+            	            {
+            	            // InternalMathInterpreter.g:246:7: (lv_op_2_0= '*' )
+            	            // InternalMathInterpreter.g:247:8: lv_op_2_0= '*'
+            	            {
+            	            lv_op_2_0=(Token)match(input,15,FOLLOW_4); 
 
-            	            						newLeafNode(otherlv_2, grammarAccess.getMulOrDivAccess().getAsteriskKeyword_1_0_0_1());
-            	            					
+            	            								newLeafNode(lv_op_2_0, grammarAccess.getMulOrDivAccess().getOpAsteriskKeyword_1_0_0_1_0());
+            	            							
+
+            	            								if (current==null) {
+            	            									current = createModelElement(grammarAccess.getMulOrDivRule());
+            	            								}
+            	            								setWithLastConsumed(current, "op", lv_op_2_0, "*");
+            	            							
+
+            	            }
+
+
+            	            }
+
 
             	            }
 
@@ -629,13 +647,13 @@ public class InternalMathInterpreterParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 2 :
-            	            // InternalMathInterpreter.g:251:5: ( () otherlv_4= '/' )
+            	            // InternalMathInterpreter.g:261:5: ( () ( (lv_op_4_0= '/' ) ) )
             	            {
-            	            // InternalMathInterpreter.g:251:5: ( () otherlv_4= '/' )
-            	            // InternalMathInterpreter.g:252:6: () otherlv_4= '/'
+            	            // InternalMathInterpreter.g:261:5: ( () ( (lv_op_4_0= '/' ) ) )
+            	            // InternalMathInterpreter.g:262:6: () ( (lv_op_4_0= '/' ) )
             	            {
-            	            // InternalMathInterpreter.g:252:6: ()
-            	            // InternalMathInterpreter.g:253:7: 
+            	            // InternalMathInterpreter.g:262:6: ()
+            	            // InternalMathInterpreter.g:263:7: 
             	            {
 
             	            							current = forceCreateModelElementAndSet(
@@ -645,10 +663,28 @@ public class InternalMathInterpreterParser extends AbstractInternalAntlrParser {
 
             	            }
 
-            	            otherlv_4=(Token)match(input,16,FOLLOW_4); 
+            	            // InternalMathInterpreter.g:269:6: ( (lv_op_4_0= '/' ) )
+            	            // InternalMathInterpreter.g:270:7: (lv_op_4_0= '/' )
+            	            {
+            	            // InternalMathInterpreter.g:270:7: (lv_op_4_0= '/' )
+            	            // InternalMathInterpreter.g:271:8: lv_op_4_0= '/'
+            	            {
+            	            lv_op_4_0=(Token)match(input,16,FOLLOW_4); 
 
-            	            						newLeafNode(otherlv_4, grammarAccess.getMulOrDivAccess().getSolidusKeyword_1_0_1_1());
-            	            					
+            	            								newLeafNode(lv_op_4_0, grammarAccess.getMulOrDivAccess().getOpSolidusKeyword_1_0_1_1_0());
+            	            							
+
+            	            								if (current==null) {
+            	            									current = createModelElement(grammarAccess.getMulOrDivRule());
+            	            								}
+            	            								setWithLastConsumed(current, "op", lv_op_4_0, "/");
+            	            							
+
+            	            }
+
+
+            	            }
+
 
             	            }
 
@@ -658,11 +694,11 @@ public class InternalMathInterpreterParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // InternalMathInterpreter.g:265:4: ( (lv_right_5_0= rulePrimary ) )
-            	    // InternalMathInterpreter.g:266:5: (lv_right_5_0= rulePrimary )
+            	    // InternalMathInterpreter.g:285:4: ( (lv_right_5_0= rulePrimary ) )
+            	    // InternalMathInterpreter.g:286:5: (lv_right_5_0= rulePrimary )
             	    {
-            	    // InternalMathInterpreter.g:266:5: (lv_right_5_0= rulePrimary )
-            	    // InternalMathInterpreter.g:267:6: lv_right_5_0= rulePrimary
+            	    // InternalMathInterpreter.g:286:5: (lv_right_5_0= rulePrimary )
+            	    // InternalMathInterpreter.g:287:6: lv_right_5_0= rulePrimary
             	    {
 
             	    						newCompositeNode(grammarAccess.getMulOrDivAccess().getRightPrimaryParserRuleCall_1_1_0());
@@ -721,7 +757,7 @@ public class InternalMathInterpreterParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePrimary"
-    // InternalMathInterpreter.g:289:1: entryRulePrimary returns [EObject current=null] : iv_rulePrimary= rulePrimary EOF ;
+    // InternalMathInterpreter.g:309:1: entryRulePrimary returns [EObject current=null] : iv_rulePrimary= rulePrimary EOF ;
     public final EObject entryRulePrimary() throws RecognitionException {
         EObject current = null;
 
@@ -729,8 +765,8 @@ public class InternalMathInterpreterParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMathInterpreter.g:289:48: (iv_rulePrimary= rulePrimary EOF )
-            // InternalMathInterpreter.g:290:2: iv_rulePrimary= rulePrimary EOF
+            // InternalMathInterpreter.g:309:48: (iv_rulePrimary= rulePrimary EOF )
+            // InternalMathInterpreter.g:310:2: iv_rulePrimary= rulePrimary EOF
             {
              newCompositeNode(grammarAccess.getPrimaryRule()); 
             pushFollow(FOLLOW_1);
@@ -757,7 +793,7 @@ public class InternalMathInterpreterParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePrimary"
-    // InternalMathInterpreter.g:296:1: rulePrimary returns [EObject current=null] : (this_Number_0= ruleNumber | this_Parenthesis_1= ruleParenthesis ) ;
+    // InternalMathInterpreter.g:316:1: rulePrimary returns [EObject current=null] : (this_Number_0= ruleNumber | this_Parenthesis_1= ruleParenthesis ) ;
     public final EObject rulePrimary() throws RecognitionException {
         EObject current = null;
 
@@ -770,10 +806,10 @@ public class InternalMathInterpreterParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMathInterpreter.g:302:2: ( (this_Number_0= ruleNumber | this_Parenthesis_1= ruleParenthesis ) )
-            // InternalMathInterpreter.g:303:2: (this_Number_0= ruleNumber | this_Parenthesis_1= ruleParenthesis )
+            // InternalMathInterpreter.g:322:2: ( (this_Number_0= ruleNumber | this_Parenthesis_1= ruleParenthesis ) )
+            // InternalMathInterpreter.g:323:2: (this_Number_0= ruleNumber | this_Parenthesis_1= ruleParenthesis )
             {
-            // InternalMathInterpreter.g:303:2: (this_Number_0= ruleNumber | this_Parenthesis_1= ruleParenthesis )
+            // InternalMathInterpreter.g:323:2: (this_Number_0= ruleNumber | this_Parenthesis_1= ruleParenthesis )
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -791,7 +827,7 @@ public class InternalMathInterpreterParser extends AbstractInternalAntlrParser {
             }
             switch (alt5) {
                 case 1 :
-                    // InternalMathInterpreter.g:304:3: this_Number_0= ruleNumber
+                    // InternalMathInterpreter.g:324:3: this_Number_0= ruleNumber
                     {
 
                     			newCompositeNode(grammarAccess.getPrimaryAccess().getNumberParserRuleCall_0());
@@ -809,7 +845,7 @@ public class InternalMathInterpreterParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalMathInterpreter.g:313:3: this_Parenthesis_1= ruleParenthesis
+                    // InternalMathInterpreter.g:333:3: this_Parenthesis_1= ruleParenthesis
                     {
 
                     			newCompositeNode(grammarAccess.getPrimaryAccess().getParenthesisParserRuleCall_1());
@@ -849,7 +885,7 @@ public class InternalMathInterpreterParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleParenthesis"
-    // InternalMathInterpreter.g:325:1: entryRuleParenthesis returns [EObject current=null] : iv_ruleParenthesis= ruleParenthesis EOF ;
+    // InternalMathInterpreter.g:345:1: entryRuleParenthesis returns [EObject current=null] : iv_ruleParenthesis= ruleParenthesis EOF ;
     public final EObject entryRuleParenthesis() throws RecognitionException {
         EObject current = null;
 
@@ -857,8 +893,8 @@ public class InternalMathInterpreterParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMathInterpreter.g:325:52: (iv_ruleParenthesis= ruleParenthesis EOF )
-            // InternalMathInterpreter.g:326:2: iv_ruleParenthesis= ruleParenthesis EOF
+            // InternalMathInterpreter.g:345:52: (iv_ruleParenthesis= ruleParenthesis EOF )
+            // InternalMathInterpreter.g:346:2: iv_ruleParenthesis= ruleParenthesis EOF
             {
              newCompositeNode(grammarAccess.getParenthesisRule()); 
             pushFollow(FOLLOW_1);
@@ -885,7 +921,7 @@ public class InternalMathInterpreterParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParenthesis"
-    // InternalMathInterpreter.g:332:1: ruleParenthesis returns [EObject current=null] : (otherlv_0= '(' ( (lv_exp_1_0= ruleExp ) ) otherlv_2= ')' ) ;
+    // InternalMathInterpreter.g:352:1: ruleParenthesis returns [EObject current=null] : (otherlv_0= '(' ( (lv_exp_1_0= ruleExp ) ) otherlv_2= ')' ) ;
     public final EObject ruleParenthesis() throws RecognitionException {
         EObject current = null;
 
@@ -898,21 +934,21 @@ public class InternalMathInterpreterParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMathInterpreter.g:338:2: ( (otherlv_0= '(' ( (lv_exp_1_0= ruleExp ) ) otherlv_2= ')' ) )
-            // InternalMathInterpreter.g:339:2: (otherlv_0= '(' ( (lv_exp_1_0= ruleExp ) ) otherlv_2= ')' )
+            // InternalMathInterpreter.g:358:2: ( (otherlv_0= '(' ( (lv_exp_1_0= ruleExp ) ) otherlv_2= ')' ) )
+            // InternalMathInterpreter.g:359:2: (otherlv_0= '(' ( (lv_exp_1_0= ruleExp ) ) otherlv_2= ')' )
             {
-            // InternalMathInterpreter.g:339:2: (otherlv_0= '(' ( (lv_exp_1_0= ruleExp ) ) otherlv_2= ')' )
-            // InternalMathInterpreter.g:340:3: otherlv_0= '(' ( (lv_exp_1_0= ruleExp ) ) otherlv_2= ')'
+            // InternalMathInterpreter.g:359:2: (otherlv_0= '(' ( (lv_exp_1_0= ruleExp ) ) otherlv_2= ')' )
+            // InternalMathInterpreter.g:360:3: otherlv_0= '(' ( (lv_exp_1_0= ruleExp ) ) otherlv_2= ')'
             {
             otherlv_0=(Token)match(input,17,FOLLOW_4); 
 
             			newLeafNode(otherlv_0, grammarAccess.getParenthesisAccess().getLeftParenthesisKeyword_0());
             		
-            // InternalMathInterpreter.g:344:3: ( (lv_exp_1_0= ruleExp ) )
-            // InternalMathInterpreter.g:345:4: (lv_exp_1_0= ruleExp )
+            // InternalMathInterpreter.g:364:3: ( (lv_exp_1_0= ruleExp ) )
+            // InternalMathInterpreter.g:365:4: (lv_exp_1_0= ruleExp )
             {
-            // InternalMathInterpreter.g:345:4: (lv_exp_1_0= ruleExp )
-            // InternalMathInterpreter.g:346:5: lv_exp_1_0= ruleExp
+            // InternalMathInterpreter.g:365:4: (lv_exp_1_0= ruleExp )
+            // InternalMathInterpreter.g:366:5: lv_exp_1_0= ruleExp
             {
 
             					newCompositeNode(grammarAccess.getParenthesisAccess().getExpExpParserRuleCall_1_0());
@@ -966,7 +1002,7 @@ public class InternalMathInterpreterParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNumber"
-    // InternalMathInterpreter.g:371:1: entryRuleNumber returns [EObject current=null] : iv_ruleNumber= ruleNumber EOF ;
+    // InternalMathInterpreter.g:391:1: entryRuleNumber returns [EObject current=null] : iv_ruleNumber= ruleNumber EOF ;
     public final EObject entryRuleNumber() throws RecognitionException {
         EObject current = null;
 
@@ -974,8 +1010,8 @@ public class InternalMathInterpreterParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMathInterpreter.g:371:47: (iv_ruleNumber= ruleNumber EOF )
-            // InternalMathInterpreter.g:372:2: iv_ruleNumber= ruleNumber EOF
+            // InternalMathInterpreter.g:391:47: (iv_ruleNumber= ruleNumber EOF )
+            // InternalMathInterpreter.g:392:2: iv_ruleNumber= ruleNumber EOF
             {
              newCompositeNode(grammarAccess.getNumberRule()); 
             pushFollow(FOLLOW_1);
@@ -1002,7 +1038,7 @@ public class InternalMathInterpreterParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNumber"
-    // InternalMathInterpreter.g:378:1: ruleNumber returns [EObject current=null] : ( (lv_value_0_0= RULE_INT ) ) ;
+    // InternalMathInterpreter.g:398:1: ruleNumber returns [EObject current=null] : ( (lv_value_0_0= RULE_INT ) ) ;
     public final EObject ruleNumber() throws RecognitionException {
         EObject current = null;
 
@@ -1012,14 +1048,14 @@ public class InternalMathInterpreterParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMathInterpreter.g:384:2: ( ( (lv_value_0_0= RULE_INT ) ) )
-            // InternalMathInterpreter.g:385:2: ( (lv_value_0_0= RULE_INT ) )
+            // InternalMathInterpreter.g:404:2: ( ( (lv_value_0_0= RULE_INT ) ) )
+            // InternalMathInterpreter.g:405:2: ( (lv_value_0_0= RULE_INT ) )
             {
-            // InternalMathInterpreter.g:385:2: ( (lv_value_0_0= RULE_INT ) )
-            // InternalMathInterpreter.g:386:3: (lv_value_0_0= RULE_INT )
+            // InternalMathInterpreter.g:405:2: ( (lv_value_0_0= RULE_INT ) )
+            // InternalMathInterpreter.g:406:3: (lv_value_0_0= RULE_INT )
             {
-            // InternalMathInterpreter.g:386:3: (lv_value_0_0= RULE_INT )
-            // InternalMathInterpreter.g:387:4: lv_value_0_0= RULE_INT
+            // InternalMathInterpreter.g:406:3: (lv_value_0_0= RULE_INT )
+            // InternalMathInterpreter.g:407:4: lv_value_0_0= RULE_INT
             {
             lv_value_0_0=(Token)match(input,RULE_INT,FOLLOW_2); 
 

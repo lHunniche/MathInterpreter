@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalMathInterpreterParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'result'", "'is'", "'+'", "'-'", "'*'", "'/'", "'('", "')'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'result'", "'is'", "'+'", "'-'", "'('", "')'", "'*'", "'/'"
     };
     public static final int RULE_ID=5;
     public static final int RULE_WS=9;
@@ -711,10 +711,10 @@ public class InternalMathInterpreterParser extends AbstractInternalContentAssist
             int alt2=2;
             int LA2_0 = input.LA(1);
 
-            if ( (LA2_0==15) ) {
+            if ( (LA2_0==17) ) {
                 alt2=1;
             }
-            else if ( (LA2_0==16) ) {
+            else if ( (LA2_0==18) ) {
                 alt2=2;
             }
             else {
@@ -805,7 +805,7 @@ public class InternalMathInterpreterParser extends AbstractInternalContentAssist
             if ( (LA3_0==RULE_INT) ) {
                 alt3=1;
             }
-            else if ( (LA3_0==17) ) {
+            else if ( (LA3_0==15) ) {
                 alt3=2;
             }
             else {
@@ -1864,7 +1864,7 @@ public class InternalMathInterpreterParser extends AbstractInternalContentAssist
                 int alt5=2;
                 int LA5_0 = input.LA(1);
 
-                if ( ((LA5_0>=15 && LA5_0<=16)) ) {
+                if ( ((LA5_0>=17 && LA5_0<=18)) ) {
                     alt5=1;
                 }
 
@@ -2183,21 +2183,31 @@ public class InternalMathInterpreterParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__MulOrDiv__Group_1_0_0__1__Impl"
-    // InternalMathInterpreter.g:733:1: rule__MulOrDiv__Group_1_0_0__1__Impl : ( '*' ) ;
+    // InternalMathInterpreter.g:733:1: rule__MulOrDiv__Group_1_0_0__1__Impl : ( ( rule__MulOrDiv__OpAssignment_1_0_0_1 ) ) ;
     public final void rule__MulOrDiv__Group_1_0_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMathInterpreter.g:737:1: ( ( '*' ) )
-            // InternalMathInterpreter.g:738:1: ( '*' )
+            // InternalMathInterpreter.g:737:1: ( ( ( rule__MulOrDiv__OpAssignment_1_0_0_1 ) ) )
+            // InternalMathInterpreter.g:738:1: ( ( rule__MulOrDiv__OpAssignment_1_0_0_1 ) )
             {
-            // InternalMathInterpreter.g:738:1: ( '*' )
-            // InternalMathInterpreter.g:739:2: '*'
+            // InternalMathInterpreter.g:738:1: ( ( rule__MulOrDiv__OpAssignment_1_0_0_1 ) )
+            // InternalMathInterpreter.g:739:2: ( rule__MulOrDiv__OpAssignment_1_0_0_1 )
             {
-             before(grammarAccess.getMulOrDivAccess().getAsteriskKeyword_1_0_0_1()); 
-            match(input,15,FOLLOW_2); 
-             after(grammarAccess.getMulOrDivAccess().getAsteriskKeyword_1_0_0_1()); 
+             before(grammarAccess.getMulOrDivAccess().getOpAssignment_1_0_0_1()); 
+            // InternalMathInterpreter.g:740:2: ( rule__MulOrDiv__OpAssignment_1_0_0_1 )
+            // InternalMathInterpreter.g:740:3: rule__MulOrDiv__OpAssignment_1_0_0_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__MulOrDiv__OpAssignment_1_0_0_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getMulOrDivAccess().getOpAssignment_1_0_0_1()); 
 
             }
 
@@ -2328,21 +2338,31 @@ public class InternalMathInterpreterParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__MulOrDiv__Group_1_0_1__1__Impl"
-    // InternalMathInterpreter.g:787:1: rule__MulOrDiv__Group_1_0_1__1__Impl : ( '/' ) ;
+    // InternalMathInterpreter.g:787:1: rule__MulOrDiv__Group_1_0_1__1__Impl : ( ( rule__MulOrDiv__OpAssignment_1_0_1_1 ) ) ;
     public final void rule__MulOrDiv__Group_1_0_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMathInterpreter.g:791:1: ( ( '/' ) )
-            // InternalMathInterpreter.g:792:1: ( '/' )
+            // InternalMathInterpreter.g:791:1: ( ( ( rule__MulOrDiv__OpAssignment_1_0_1_1 ) ) )
+            // InternalMathInterpreter.g:792:1: ( ( rule__MulOrDiv__OpAssignment_1_0_1_1 ) )
             {
-            // InternalMathInterpreter.g:792:1: ( '/' )
-            // InternalMathInterpreter.g:793:2: '/'
+            // InternalMathInterpreter.g:792:1: ( ( rule__MulOrDiv__OpAssignment_1_0_1_1 ) )
+            // InternalMathInterpreter.g:793:2: ( rule__MulOrDiv__OpAssignment_1_0_1_1 )
             {
-             before(grammarAccess.getMulOrDivAccess().getSolidusKeyword_1_0_1_1()); 
-            match(input,16,FOLLOW_2); 
-             after(grammarAccess.getMulOrDivAccess().getSolidusKeyword_1_0_1_1()); 
+             before(grammarAccess.getMulOrDivAccess().getOpAssignment_1_0_1_1()); 
+            // InternalMathInterpreter.g:794:2: ( rule__MulOrDiv__OpAssignment_1_0_1_1 )
+            // InternalMathInterpreter.g:794:3: rule__MulOrDiv__OpAssignment_1_0_1_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__MulOrDiv__OpAssignment_1_0_1_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getMulOrDivAccess().getOpAssignment_1_0_1_1()); 
 
             }
 
@@ -2416,7 +2436,7 @@ public class InternalMathInterpreterParser extends AbstractInternalContentAssist
             // InternalMathInterpreter.g:821:2: '('
             {
              before(grammarAccess.getParenthesisAccess().getLeftParenthesisKeyword_0()); 
-            match(input,17,FOLLOW_2); 
+            match(input,15,FOLLOW_2); 
              after(grammarAccess.getParenthesisAccess().getLeftParenthesisKeyword_0()); 
 
             }
@@ -2571,7 +2591,7 @@ public class InternalMathInterpreterParser extends AbstractInternalContentAssist
             // InternalMathInterpreter.g:874:2: ')'
             {
              before(grammarAccess.getParenthesisAccess().getRightParenthesisKeyword_2()); 
-            match(input,18,FOLLOW_2); 
+            match(input,16,FOLLOW_2); 
              after(grammarAccess.getParenthesisAccess().getRightParenthesisKeyword_2()); 
 
             }
@@ -2676,18 +2696,108 @@ public class InternalMathInterpreterParser extends AbstractInternalContentAssist
     // $ANTLR end "rule__PlusOrMinus__RightAssignment_1_1"
 
 
+    // $ANTLR start "rule__MulOrDiv__OpAssignment_1_0_0_1"
+    // InternalMathInterpreter.g:914:1: rule__MulOrDiv__OpAssignment_1_0_0_1 : ( ( '*' ) ) ;
+    public final void rule__MulOrDiv__OpAssignment_1_0_0_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalMathInterpreter.g:918:1: ( ( ( '*' ) ) )
+            // InternalMathInterpreter.g:919:2: ( ( '*' ) )
+            {
+            // InternalMathInterpreter.g:919:2: ( ( '*' ) )
+            // InternalMathInterpreter.g:920:3: ( '*' )
+            {
+             before(grammarAccess.getMulOrDivAccess().getOpAsteriskKeyword_1_0_0_1_0()); 
+            // InternalMathInterpreter.g:921:3: ( '*' )
+            // InternalMathInterpreter.g:922:4: '*'
+            {
+             before(grammarAccess.getMulOrDivAccess().getOpAsteriskKeyword_1_0_0_1_0()); 
+            match(input,17,FOLLOW_2); 
+             after(grammarAccess.getMulOrDivAccess().getOpAsteriskKeyword_1_0_0_1_0()); 
+
+            }
+
+             after(grammarAccess.getMulOrDivAccess().getOpAsteriskKeyword_1_0_0_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__MulOrDiv__OpAssignment_1_0_0_1"
+
+
+    // $ANTLR start "rule__MulOrDiv__OpAssignment_1_0_1_1"
+    // InternalMathInterpreter.g:933:1: rule__MulOrDiv__OpAssignment_1_0_1_1 : ( ( '/' ) ) ;
+    public final void rule__MulOrDiv__OpAssignment_1_0_1_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalMathInterpreter.g:937:1: ( ( ( '/' ) ) )
+            // InternalMathInterpreter.g:938:2: ( ( '/' ) )
+            {
+            // InternalMathInterpreter.g:938:2: ( ( '/' ) )
+            // InternalMathInterpreter.g:939:3: ( '/' )
+            {
+             before(grammarAccess.getMulOrDivAccess().getOpSolidusKeyword_1_0_1_1_0()); 
+            // InternalMathInterpreter.g:940:3: ( '/' )
+            // InternalMathInterpreter.g:941:4: '/'
+            {
+             before(grammarAccess.getMulOrDivAccess().getOpSolidusKeyword_1_0_1_1_0()); 
+            match(input,18,FOLLOW_2); 
+             after(grammarAccess.getMulOrDivAccess().getOpSolidusKeyword_1_0_1_1_0()); 
+
+            }
+
+             after(grammarAccess.getMulOrDivAccess().getOpSolidusKeyword_1_0_1_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__MulOrDiv__OpAssignment_1_0_1_1"
+
+
     // $ANTLR start "rule__MulOrDiv__RightAssignment_1_1"
-    // InternalMathInterpreter.g:914:1: rule__MulOrDiv__RightAssignment_1_1 : ( rulePrimary ) ;
+    // InternalMathInterpreter.g:952:1: rule__MulOrDiv__RightAssignment_1_1 : ( rulePrimary ) ;
     public final void rule__MulOrDiv__RightAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMathInterpreter.g:918:1: ( ( rulePrimary ) )
-            // InternalMathInterpreter.g:919:2: ( rulePrimary )
+            // InternalMathInterpreter.g:956:1: ( ( rulePrimary ) )
+            // InternalMathInterpreter.g:957:2: ( rulePrimary )
             {
-            // InternalMathInterpreter.g:919:2: ( rulePrimary )
-            // InternalMathInterpreter.g:920:3: rulePrimary
+            // InternalMathInterpreter.g:957:2: ( rulePrimary )
+            // InternalMathInterpreter.g:958:3: rulePrimary
             {
              before(grammarAccess.getMulOrDivAccess().getRightPrimaryParserRuleCall_1_1_0()); 
             pushFollow(FOLLOW_2);
@@ -2718,17 +2828,17 @@ public class InternalMathInterpreterParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Parenthesis__ExpAssignment_1"
-    // InternalMathInterpreter.g:929:1: rule__Parenthesis__ExpAssignment_1 : ( ruleExp ) ;
+    // InternalMathInterpreter.g:967:1: rule__Parenthesis__ExpAssignment_1 : ( ruleExp ) ;
     public final void rule__Parenthesis__ExpAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMathInterpreter.g:933:1: ( ( ruleExp ) )
-            // InternalMathInterpreter.g:934:2: ( ruleExp )
+            // InternalMathInterpreter.g:971:1: ( ( ruleExp ) )
+            // InternalMathInterpreter.g:972:2: ( ruleExp )
             {
-            // InternalMathInterpreter.g:934:2: ( ruleExp )
-            // InternalMathInterpreter.g:935:3: ruleExp
+            // InternalMathInterpreter.g:972:2: ( ruleExp )
+            // InternalMathInterpreter.g:973:3: ruleExp
             {
              before(grammarAccess.getParenthesisAccess().getExpExpParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -2759,17 +2869,17 @@ public class InternalMathInterpreterParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Number__ValueAssignment"
-    // InternalMathInterpreter.g:944:1: rule__Number__ValueAssignment : ( RULE_INT ) ;
+    // InternalMathInterpreter.g:982:1: rule__Number__ValueAssignment : ( RULE_INT ) ;
     public final void rule__Number__ValueAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMathInterpreter.g:948:1: ( ( RULE_INT ) )
-            // InternalMathInterpreter.g:949:2: ( RULE_INT )
+            // InternalMathInterpreter.g:986:1: ( ( RULE_INT ) )
+            // InternalMathInterpreter.g:987:2: ( RULE_INT )
             {
-            // InternalMathInterpreter.g:949:2: ( RULE_INT )
-            // InternalMathInterpreter.g:950:3: RULE_INT
+            // InternalMathInterpreter.g:987:2: ( RULE_INT )
+            // InternalMathInterpreter.g:988:3: RULE_INT
             {
              before(grammarAccess.getNumberAccess().getValueINTTerminalRuleCall_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -2802,13 +2912,13 @@ public class InternalMathInterpreterParser extends AbstractInternalContentAssist
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000020010L});
+    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000008010L});
     public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000006000L});
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000006002L});
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000018000L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000018002L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000060000L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000060002L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000010000L});
 
 }

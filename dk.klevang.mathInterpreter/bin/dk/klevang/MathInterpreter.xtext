@@ -19,7 +19,7 @@ PlusOrMinus returns Exp:
 
 MulOrDiv returns Exp:
 	Primary (
-		({Mult.left=current} '*' | {Div.left=current} '/')
+		({Mult.left=current} op='*' | {Div.left=current} op='/')
 		right=Primary
 	)*
 ;

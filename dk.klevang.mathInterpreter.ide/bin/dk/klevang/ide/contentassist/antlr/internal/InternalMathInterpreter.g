@@ -736,9 +736,9 @@ rule__MulOrDiv__Group_1_0_0__1__Impl
 	}
 :
 (
-	{ before(grammarAccess.getMulOrDivAccess().getAsteriskKeyword_1_0_0_1()); }
-	'*'
-	{ after(grammarAccess.getMulOrDivAccess().getAsteriskKeyword_1_0_0_1()); }
+	{ before(grammarAccess.getMulOrDivAccess().getOpAssignment_1_0_0_1()); }
+	(rule__MulOrDiv__OpAssignment_1_0_0_1)
+	{ after(grammarAccess.getMulOrDivAccess().getOpAssignment_1_0_0_1()); }
 )
 ;
 finally {
@@ -790,9 +790,9 @@ rule__MulOrDiv__Group_1_0_1__1__Impl
 	}
 :
 (
-	{ before(grammarAccess.getMulOrDivAccess().getSolidusKeyword_1_0_1_1()); }
-	'/'
-	{ after(grammarAccess.getMulOrDivAccess().getSolidusKeyword_1_0_1_1()); }
+	{ before(grammarAccess.getMulOrDivAccess().getOpAssignment_1_0_1_1()); }
+	(rule__MulOrDiv__OpAssignment_1_0_1_1)
+	{ after(grammarAccess.getMulOrDivAccess().getOpAssignment_1_0_1_1()); }
 )
 ;
 finally {
@@ -905,6 +905,44 @@ rule__PlusOrMinus__RightAssignment_1_1
 		{ before(grammarAccess.getPlusOrMinusAccess().getRightMulOrDivParserRuleCall_1_1_0()); }
 		ruleMulOrDiv
 		{ after(grammarAccess.getPlusOrMinusAccess().getRightMulOrDivParserRuleCall_1_1_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__MulOrDiv__OpAssignment_1_0_0_1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getMulOrDivAccess().getOpAsteriskKeyword_1_0_0_1_0()); }
+		(
+			{ before(grammarAccess.getMulOrDivAccess().getOpAsteriskKeyword_1_0_0_1_0()); }
+			'*'
+			{ after(grammarAccess.getMulOrDivAccess().getOpAsteriskKeyword_1_0_0_1_0()); }
+		)
+		{ after(grammarAccess.getMulOrDivAccess().getOpAsteriskKeyword_1_0_0_1_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__MulOrDiv__OpAssignment_1_0_1_1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getMulOrDivAccess().getOpSolidusKeyword_1_0_1_1_0()); }
+		(
+			{ before(grammarAccess.getMulOrDivAccess().getOpSolidusKeyword_1_0_1_1_0()); }
+			'/'
+			{ after(grammarAccess.getMulOrDivAccess().getOpSolidusKeyword_1_0_1_1_0()); }
+		)
+		{ after(grammarAccess.getMulOrDivAccess().getOpSolidusKeyword_1_0_1_1_0()); }
 	)
 ;
 finally {

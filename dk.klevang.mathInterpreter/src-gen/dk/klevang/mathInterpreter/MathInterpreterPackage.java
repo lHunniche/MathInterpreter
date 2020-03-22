@@ -297,13 +297,22 @@ public interface MathInterpreterPackage extends EPackage
   int MULT__RIGHT = EXP__RIGHT;
 
   /**
+   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULT__OP = EXP_FEATURE_COUNT + 0;
+
+  /**
    * The number of structural features of the '<em>Mult</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MULT_FEATURE_COUNT = EXP_FEATURE_COUNT + 0;
+  int MULT_FEATURE_COUNT = EXP_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link dk.klevang.mathInterpreter.impl.DivImpl <em>Div</em>}' class.
@@ -352,13 +361,22 @@ public interface MathInterpreterPackage extends EPackage
   int DIV__RIGHT = EXP__RIGHT;
 
   /**
+   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIV__OP = EXP_FEATURE_COUNT + 0;
+
+  /**
    * The number of structural features of the '<em>Div</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DIV_FEATURE_COUNT = EXP_FEATURE_COUNT + 0;
+  int DIV_FEATURE_COUNT = EXP_FEATURE_COUNT + 1;
 
 
   /**
@@ -467,6 +485,17 @@ public interface MathInterpreterPackage extends EPackage
   EClass getMult();
 
   /**
+   * Returns the meta object for the attribute '{@link dk.klevang.mathInterpreter.Mult#getOp <em>Op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Op</em>'.
+   * @see dk.klevang.mathInterpreter.Mult#getOp()
+   * @see #getMult()
+   * @generated
+   */
+  EAttribute getMult_Op();
+
+  /**
    * Returns the meta object for class '{@link dk.klevang.mathInterpreter.Div <em>Div</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -475,6 +504,17 @@ public interface MathInterpreterPackage extends EPackage
    * @generated
    */
   EClass getDiv();
+
+  /**
+   * Returns the meta object for the attribute '{@link dk.klevang.mathInterpreter.Div#getOp <em>Op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Op</em>'.
+   * @see dk.klevang.mathInterpreter.Div#getOp()
+   * @see #getDiv()
+   * @generated
+   */
+  EAttribute getDiv_Op();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -590,6 +630,14 @@ public interface MathInterpreterPackage extends EPackage
     EClass MULT = eINSTANCE.getMult();
 
     /**
+     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MULT__OP = eINSTANCE.getMult_Op();
+
+    /**
      * The meta object literal for the '{@link dk.klevang.mathInterpreter.impl.DivImpl <em>Div</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -598,6 +646,14 @@ public interface MathInterpreterPackage extends EPackage
      * @generated
      */
     EClass DIV = eINSTANCE.getDiv();
+
+    /**
+     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DIV__OP = eINSTANCE.getDiv_Op();
 
   }
 

@@ -124,46 +124,54 @@ public class MathInterpreterGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives_1_0 = (Alternatives)cGroup_1.eContents().get(0);
 		private final Group cGroup_1_0_0 = (Group)cAlternatives_1_0.eContents().get(0);
 		private final Action cMultLeftAction_1_0_0_0 = (Action)cGroup_1_0_0.eContents().get(0);
-		private final Keyword cAsteriskKeyword_1_0_0_1 = (Keyword)cGroup_1_0_0.eContents().get(1);
+		private final Assignment cOpAssignment_1_0_0_1 = (Assignment)cGroup_1_0_0.eContents().get(1);
+		private final Keyword cOpAsteriskKeyword_1_0_0_1_0 = (Keyword)cOpAssignment_1_0_0_1.eContents().get(0);
 		private final Group cGroup_1_0_1 = (Group)cAlternatives_1_0.eContents().get(1);
 		private final Action cDivLeftAction_1_0_1_0 = (Action)cGroup_1_0_1.eContents().get(0);
-		private final Keyword cSolidusKeyword_1_0_1_1 = (Keyword)cGroup_1_0_1.eContents().get(1);
+		private final Assignment cOpAssignment_1_0_1_1 = (Assignment)cGroup_1_0_1.eContents().get(1);
+		private final Keyword cOpSolidusKeyword_1_0_1_1_0 = (Keyword)cOpAssignment_1_0_1_1.eContents().get(0);
 		private final Assignment cRightAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cRightPrimaryParserRuleCall_1_1_0 = (RuleCall)cRightAssignment_1_1.eContents().get(0);
 		
 		//MulOrDiv Exp:
-		//	Primary (({Mult.left=current} '*' | {Div.left=current} '/') right=Primary)*;
+		//	Primary (({Mult.left=current} op='*' | {Div.left=current} op='/') right=Primary)*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Primary (({Mult.left=current} '*' | {Div.left=current} '/') right=Primary)*
+		//Primary (({Mult.left=current} op='*' | {Div.left=current} op='/') right=Primary)*
 		public Group getGroup() { return cGroup; }
 		
 		//Primary
 		public RuleCall getPrimaryParserRuleCall_0() { return cPrimaryParserRuleCall_0; }
 		
-		//(({Mult.left=current} '*' | {Div.left=current} '/') right=Primary)*
+		//(({Mult.left=current} op='*' | {Div.left=current} op='/') right=Primary)*
 		public Group getGroup_1() { return cGroup_1; }
 		
-		//({Mult.left=current} '*' | {Div.left=current} '/')
+		//({Mult.left=current} op='*' | {Div.left=current} op='/')
 		public Alternatives getAlternatives_1_0() { return cAlternatives_1_0; }
 		
-		//{Mult.left=current} '*'
+		//{Mult.left=current} op='*'
 		public Group getGroup_1_0_0() { return cGroup_1_0_0; }
 		
 		//{Mult.left=current}
 		public Action getMultLeftAction_1_0_0_0() { return cMultLeftAction_1_0_0_0; }
 		
-		//'*'
-		public Keyword getAsteriskKeyword_1_0_0_1() { return cAsteriskKeyword_1_0_0_1; }
+		//op='*'
+		public Assignment getOpAssignment_1_0_0_1() { return cOpAssignment_1_0_0_1; }
 		
-		//{Div.left=current} '/'
+		//'*'
+		public Keyword getOpAsteriskKeyword_1_0_0_1_0() { return cOpAsteriskKeyword_1_0_0_1_0; }
+		
+		//{Div.left=current} op='/'
 		public Group getGroup_1_0_1() { return cGroup_1_0_1; }
 		
 		//{Div.left=current}
 		public Action getDivLeftAction_1_0_1_0() { return cDivLeftAction_1_0_1_0; }
 		
+		//op='/'
+		public Assignment getOpAssignment_1_0_1_1() { return cOpAssignment_1_0_1_1; }
+		
 		//'/'
-		public Keyword getSolidusKeyword_1_0_1_1() { return cSolidusKeyword_1_0_1_1; }
+		public Keyword getOpSolidusKeyword_1_0_1_1_0() { return cOpSolidusKeyword_1_0_1_1_0; }
 		
 		//right=Primary
 		public Assignment getRightAssignment_1_1() { return cRightAssignment_1_1; }
@@ -318,7 +326,7 @@ public class MathInterpreterGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//MulOrDiv Exp:
-	//	Primary (({Mult.left=current} '*' | {Div.left=current} '/') right=Primary)*;
+	//	Primary (({Mult.left=current} op='*' | {Div.left=current} op='/') right=Primary)*;
 	public MulOrDivElements getMulOrDivAccess() {
 		return pMulOrDiv;
 	}
