@@ -1,7 +1,7 @@
 INDEX VERSION 1.131+C:\GitHub\MathInterpreter\.metadata\.plugins\org.eclipse.jdt.core
 3301639576.index
-775765385.index
-4213618722.index
+2356774911.index
+2934028386.index
 3389678878.index
 2216420247.index
 962264057.index
@@ -29,11 +29,11 @@ INDEX VERSION 1.131+C:\GitHub\MathInterpreter\.metadata\.plugins\org.eclipse.jdt
 202638269.index
 4018264606.index
 2272015487.index
-1910370818.index
+1376122263.index
 4158350934.index
 3227056335.index
 3967756473.index
-1376122263.index
+1910370818.index
 1241298325.index
 3852737441.index
 3278043833.index
@@ -51,8 +51,8 @@ INDEX VERSION 1.131+C:\GitHub\MathInterpreter\.metadata\.plugins\org.eclipse.jdt
 2899478204.index
 982045217.index
 4230548467.index
-4063022543.index
 4212195811.index
+4063022543.index
 1860485910.index
 2627789903.index
 3932500467.index
@@ -101,16 +101,15 @@ INDEX VERSION 1.131+C:\GitHub\MathInterpreter\.metadata\.plugins\org.eclipse.jdt
 801935378.index
 1335448826.index
 1535142013.index
+4213618722.index
 1725629034.index
 1484119346.index
 3862403889.index
 1067190380.index
 4129226583.index
+775765385.index
 144380394.index
 4252184071.index
 1033819233.index
-1554762699.index
 1942359185.index
 2238995556.index
-2356774911.index
-2934028386.index

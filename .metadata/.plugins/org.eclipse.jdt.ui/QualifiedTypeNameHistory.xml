@@ -2,4 +2,8 @@
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="org.eclipse.emf.ecore.EObject"/>
 <fullyQualifiedTypeName name="javax.inject.Inject"/>
+<fullyQualifiedTypeName name="org.eclipse.xtext.ui.editor.hover.IEObjectHoverProvider"/>
+<fullyQualifiedTypeName name="dk.klevang.ui.hover.MyHoverClass"/>
+<fullyQualifiedTypeName name="org.eclipse.xtext.documentation.IEObjectDocumentationProvider"/>
+<fullyQualifiedTypeName name="dk.klevang.ui.hover.MyHoverContent"/>
 </qualifiedTypeNameHistroy>

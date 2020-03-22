@@ -10,12 +10,14 @@ import dk.klevang.mathInterpreter.MathExp;
 import dk.klevang.mathInterpreter.Minus;
 import dk.klevang.mathInterpreter.Mult;
 import dk.klevang.mathInterpreter.Plus;
+import java.util.HashMap;
 import javax.swing.JOptionPane;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
+import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 
 /**
  * Generates code from your model files on save.
@@ -28,98 +30,125 @@ public class MathInterpreterGenerator extends AbstractGenerator {
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
     final MathExp math = Iterators.<MathExp>filter(resource.getAllContents(), MathExp.class).next();
     final int result = this.compute(math);
-    CharSequence _display = this.display(math);
-    String _plus = ("Math expression = " + _display);
-    System.out.println(_plus);
     JOptionPane.showMessageDialog(null, ("result = " + Integer.valueOf(result)), "Math Language", JOptionPane.INFORMATION_MESSAGE);
   }
   
   public int compute(final MathExp math) {
     int _xblockexpression = (int) 0;
     {
-      System.out.println(math.getExp());
-      _xblockexpression = this.computeExp(math.getExp());
+      final HashMap<String, Integer> var_list = CollectionLiterals.<String, Integer>newHashMap();
+      int _xifexpression = (int) 0;
+      Exp _exp = math.getExp();
+      boolean _tripleEquals = (_exp == null);
+      if (_tripleEquals) {
+        int _xblockexpression_1 = (int) 0;
+        {
+          final int left = this.compute(math.getLeft());
+          var_list.put(math.getLeft().getMathVar().getExpVar(), Integer.valueOf(left));
+          _xblockexpression_1 = this.computeExp(math.getRight(), var_list);
+        }
+        _xifexpression = _xblockexpression_1;
+      } else {
+        _xifexpression = this.computeExp(math.getExp(), null);
+      }
+      _xblockexpression = _xifexpression;
     }
     return _xblockexpression;
   }
   
-  public int computeExp(final Exp exp) {
+  public int computeExp(final Exp exp, final HashMap<String, Integer> vars) {
     int _xblockexpression = (int) 0;
     {
       Exp _exp = exp.getExp();
       boolean _tripleNotEquals = (_exp != null);
       if (_tripleNotEquals) {
-        return this.computeExp(exp.getExp());
+        return this.computeExp(exp.getExp(), vars);
+      } else {
+        MathExp _mathExp = exp.getMathExp();
+        boolean _tripleNotEquals_1 = (_mathExp != null);
+        if (_tripleNotEquals_1) {
+          return this.compute(exp.getMathExp());
+        }
       }
-      final int right = this.computeBranch(exp.getRight());
-      System.out.print("Exp: ");
-      System.out.println(exp);
+      final int right = this.computeBranch(exp.getRight(), vars);
       int _switchResult = (int) 0;
       boolean _matched = false;
       if (exp instanceof Plus) {
         _matched=true;
-        int _computeExp = this.computeExp(((Plus)exp).getLeft());
+        int _computeExp = this.computeExp(((Plus)exp).getLeft(), vars);
         _switchResult = (_computeExp + right);
       }
       if (!_matched) {
         if (exp instanceof Minus) {
           _matched=true;
-          int _computeExp = this.computeExp(((Minus)exp).getLeft());
+          int _computeExp = this.computeExp(((Minus)exp).getLeft(), vars);
           _switchResult = (_computeExp - right);
         }
       }
       if (!_matched) {
         if (exp instanceof Mult) {
           _matched=true;
-          int _computeExp = this.computeExp(((Mult)exp).getLeft());
+          int _computeExp = this.computeExp(((Mult)exp).getLeft(), vars);
           _switchResult = (_computeExp * right);
         }
       }
       if (!_matched) {
         if (exp instanceof Div) {
           _matched=true;
-          int _computeExp = this.computeExp(((Div)exp).getLeft());
+          int _computeExp = this.computeExp(((Div)exp).getLeft(), vars);
           _switchResult = (_computeExp / right);
         }
       }
       if (!_matched) {
-        _switchResult = this.computeBranch(exp);
+        _switchResult = this.computeBranch(exp, vars);
       }
       _xblockexpression = _switchResult;
     }
     return _xblockexpression;
   }
   
-  public int computeBranch(final Exp exp) {
+  public int computeBranch(final Exp exp, final HashMap<String, Integer> vars) {
     if ((exp != null)) {
-      System.out.print("Branch: ");
-      System.out.println(exp);
       boolean _matched = false;
       if (exp instanceof Plus) {
         _matched=true;
-        return this.computeExp(exp);
+        return this.computeExp(exp, vars);
       }
       if (!_matched) {
         if (exp instanceof Minus) {
           _matched=true;
-          return this.computeExp(exp);
+          return this.computeExp(exp, vars);
         }
       }
       if (!_matched) {
         if (exp instanceof Mult) {
           _matched=true;
-          return this.computeExp(exp);
+          return this.computeExp(exp, vars);
         }
       }
       if (!_matched) {
         if (exp instanceof Div) {
           _matched=true;
-          return this.computeExp(exp);
+          return this.computeExp(exp, vars);
         }
       }
-      return exp.getValue();
+      return this.handleVariable(exp, vars);
     }
     return (-1000);
+  }
+  
+  public int handleVariable(final Exp exp, final HashMap<String, Integer> vars) {
+    String _expVar = exp.getExpVar();
+    boolean _tripleEquals = (_expVar == null);
+    if (_tripleEquals) {
+      return exp.getValue();
+    } else {
+      final Integer variable = vars.get(exp.getExpVar());
+      if ((variable == null)) {
+        System.out.println("Variable is null, faaaaack");
+      }
+      return (variable).intValue();
+    }
   }
   
   public int computeRightSide(final Exp exp) {

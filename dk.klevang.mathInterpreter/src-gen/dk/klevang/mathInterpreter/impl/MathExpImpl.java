@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dk.klevang.mathInterpreter.impl.MathExpImpl#getVar <em>Var</em>}</li>
+ *   <li>{@link dk.klevang.mathInterpreter.impl.MathExpImpl#getMathVar <em>Math Var</em>}</li>
  *   <li>{@link dk.klevang.mathInterpreter.impl.MathExpImpl#getExp <em>Exp</em>}</li>
  *   <li>{@link dk.klevang.mathInterpreter.impl.MathExpImpl#getLeft <em>Left</em>}</li>
  *   <li>{@link dk.klevang.mathInterpreter.impl.MathExpImpl#getRight <em>Right</em>}</li>
@@ -35,14 +35,14 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class MathExpImpl extends MinimalEObjectImpl.Container implements MathExp
 {
   /**
-   * The cached value of the '{@link #getVar() <em>Var</em>}' containment reference.
+   * The cached value of the '{@link #getMathVar() <em>Math Var</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVar()
+   * @see #getMathVar()
    * @generated
    * @ordered
    */
-  protected Exp var;
+  protected Exp mathVar;
 
   /**
    * The cached value of the '{@link #getExp() <em>Exp</em>}' containment reference.
@@ -101,9 +101,9 @@ public class MathExpImpl extends MinimalEObjectImpl.Container implements MathExp
    * @generated
    */
   @Override
-  public Exp getVar()
+  public Exp getMathVar()
   {
-    return var;
+    return mathVar;
   }
 
   /**
@@ -111,13 +111,13 @@ public class MathExpImpl extends MinimalEObjectImpl.Container implements MathExp
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetVar(Exp newVar, NotificationChain msgs)
+  public NotificationChain basicSetMathVar(Exp newMathVar, NotificationChain msgs)
   {
-    Exp oldVar = var;
-    var = newVar;
+    Exp oldMathVar = mathVar;
+    mathVar = newMathVar;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MathInterpreterPackage.MATH_EXP__VAR, oldVar, newVar);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MathInterpreterPackage.MATH_EXP__MATH_VAR, oldMathVar, newMathVar);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -129,20 +129,20 @@ public class MathExpImpl extends MinimalEObjectImpl.Container implements MathExp
    * @generated
    */
   @Override
-  public void setVar(Exp newVar)
+  public void setMathVar(Exp newMathVar)
   {
-    if (newVar != var)
+    if (newMathVar != mathVar)
     {
       NotificationChain msgs = null;
-      if (var != null)
-        msgs = ((InternalEObject)var).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MathInterpreterPackage.MATH_EXP__VAR, null, msgs);
-      if (newVar != null)
-        msgs = ((InternalEObject)newVar).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MathInterpreterPackage.MATH_EXP__VAR, null, msgs);
-      msgs = basicSetVar(newVar, msgs);
+      if (mathVar != null)
+        msgs = ((InternalEObject)mathVar).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MathInterpreterPackage.MATH_EXP__MATH_VAR, null, msgs);
+      if (newMathVar != null)
+        msgs = ((InternalEObject)newMathVar).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MathInterpreterPackage.MATH_EXP__MATH_VAR, null, msgs);
+      msgs = basicSetMathVar(newMathVar, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MathInterpreterPackage.MATH_EXP__VAR, newVar, newVar));
+      eNotify(new ENotificationImpl(this, Notification.SET, MathInterpreterPackage.MATH_EXP__MATH_VAR, newMathVar, newMathVar));
   }
 
   /**
@@ -305,8 +305,8 @@ public class MathExpImpl extends MinimalEObjectImpl.Container implements MathExp
   {
     switch (featureID)
     {
-      case MathInterpreterPackage.MATH_EXP__VAR:
-        return basicSetVar(null, msgs);
+      case MathInterpreterPackage.MATH_EXP__MATH_VAR:
+        return basicSetMathVar(null, msgs);
       case MathInterpreterPackage.MATH_EXP__EXP:
         return basicSetExp(null, msgs);
       case MathInterpreterPackage.MATH_EXP__LEFT:
@@ -327,8 +327,8 @@ public class MathExpImpl extends MinimalEObjectImpl.Container implements MathExp
   {
     switch (featureID)
     {
-      case MathInterpreterPackage.MATH_EXP__VAR:
-        return getVar();
+      case MathInterpreterPackage.MATH_EXP__MATH_VAR:
+        return getMathVar();
       case MathInterpreterPackage.MATH_EXP__EXP:
         return getExp();
       case MathInterpreterPackage.MATH_EXP__LEFT:
@@ -349,8 +349,8 @@ public class MathExpImpl extends MinimalEObjectImpl.Container implements MathExp
   {
     switch (featureID)
     {
-      case MathInterpreterPackage.MATH_EXP__VAR:
-        setVar((Exp)newValue);
+      case MathInterpreterPackage.MATH_EXP__MATH_VAR:
+        setMathVar((Exp)newValue);
         return;
       case MathInterpreterPackage.MATH_EXP__EXP:
         setExp((Exp)newValue);
@@ -375,8 +375,8 @@ public class MathExpImpl extends MinimalEObjectImpl.Container implements MathExp
   {
     switch (featureID)
     {
-      case MathInterpreterPackage.MATH_EXP__VAR:
-        setVar((Exp)null);
+      case MathInterpreterPackage.MATH_EXP__MATH_VAR:
+        setMathVar((Exp)null);
         return;
       case MathInterpreterPackage.MATH_EXP__EXP:
         setExp((Exp)null);
@@ -401,8 +401,8 @@ public class MathExpImpl extends MinimalEObjectImpl.Container implements MathExp
   {
     switch (featureID)
     {
-      case MathInterpreterPackage.MATH_EXP__VAR:
-        return var != null;
+      case MathInterpreterPackage.MATH_EXP__MATH_VAR:
+        return mathVar != null;
       case MathInterpreterPackage.MATH_EXP__EXP:
         return exp != null;
       case MathInterpreterPackage.MATH_EXP__LEFT:

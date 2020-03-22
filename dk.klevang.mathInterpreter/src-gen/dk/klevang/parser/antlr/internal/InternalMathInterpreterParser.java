@@ -118,7 +118,7 @@ public class InternalMathInterpreterParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMathExp"
-    // InternalMathInterpreter.g:71:1: ruleMathExp returns [EObject current=null] : (otherlv_0= 'let' ( (lv_var_1_0= ruleVariable ) ) otherlv_2= '=' ( (lv_exp_3_0= ruleExp ) ) ( () otherlv_5= 'in' ( (lv_right_6_0= ruleExp ) ) otherlv_7= 'end' )* ) ;
+    // InternalMathInterpreter.g:71:1: ruleMathExp returns [EObject current=null] : (otherlv_0= 'let' ( (lv_mathVar_1_0= ruleVariable ) ) otherlv_2= '=' ( (lv_exp_3_0= ruleExp ) ) ( () otherlv_5= 'in' ( (lv_right_6_0= ruleExp ) ) otherlv_7= 'end' )* ) ;
     public final EObject ruleMathExp() throws RecognitionException {
         EObject current = null;
 
@@ -126,7 +126,7 @@ public class InternalMathInterpreterParser extends AbstractInternalAntlrParser {
         Token otherlv_2=null;
         Token otherlv_5=null;
         Token otherlv_7=null;
-        EObject lv_var_1_0 = null;
+        EObject lv_mathVar_1_0 = null;
 
         EObject lv_exp_3_0 = null;
 
@@ -137,27 +137,27 @@ public class InternalMathInterpreterParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMathInterpreter.g:77:2: ( (otherlv_0= 'let' ( (lv_var_1_0= ruleVariable ) ) otherlv_2= '=' ( (lv_exp_3_0= ruleExp ) ) ( () otherlv_5= 'in' ( (lv_right_6_0= ruleExp ) ) otherlv_7= 'end' )* ) )
-            // InternalMathInterpreter.g:78:2: (otherlv_0= 'let' ( (lv_var_1_0= ruleVariable ) ) otherlv_2= '=' ( (lv_exp_3_0= ruleExp ) ) ( () otherlv_5= 'in' ( (lv_right_6_0= ruleExp ) ) otherlv_7= 'end' )* )
+            // InternalMathInterpreter.g:77:2: ( (otherlv_0= 'let' ( (lv_mathVar_1_0= ruleVariable ) ) otherlv_2= '=' ( (lv_exp_3_0= ruleExp ) ) ( () otherlv_5= 'in' ( (lv_right_6_0= ruleExp ) ) otherlv_7= 'end' )* ) )
+            // InternalMathInterpreter.g:78:2: (otherlv_0= 'let' ( (lv_mathVar_1_0= ruleVariable ) ) otherlv_2= '=' ( (lv_exp_3_0= ruleExp ) ) ( () otherlv_5= 'in' ( (lv_right_6_0= ruleExp ) ) otherlv_7= 'end' )* )
             {
-            // InternalMathInterpreter.g:78:2: (otherlv_0= 'let' ( (lv_var_1_0= ruleVariable ) ) otherlv_2= '=' ( (lv_exp_3_0= ruleExp ) ) ( () otherlv_5= 'in' ( (lv_right_6_0= ruleExp ) ) otherlv_7= 'end' )* )
-            // InternalMathInterpreter.g:79:3: otherlv_0= 'let' ( (lv_var_1_0= ruleVariable ) ) otherlv_2= '=' ( (lv_exp_3_0= ruleExp ) ) ( () otherlv_5= 'in' ( (lv_right_6_0= ruleExp ) ) otherlv_7= 'end' )*
+            // InternalMathInterpreter.g:78:2: (otherlv_0= 'let' ( (lv_mathVar_1_0= ruleVariable ) ) otherlv_2= '=' ( (lv_exp_3_0= ruleExp ) ) ( () otherlv_5= 'in' ( (lv_right_6_0= ruleExp ) ) otherlv_7= 'end' )* )
+            // InternalMathInterpreter.g:79:3: otherlv_0= 'let' ( (lv_mathVar_1_0= ruleVariable ) ) otherlv_2= '=' ( (lv_exp_3_0= ruleExp ) ) ( () otherlv_5= 'in' ( (lv_right_6_0= ruleExp ) ) otherlv_7= 'end' )*
             {
             otherlv_0=(Token)match(input,11,FOLLOW_3); 
 
             			newLeafNode(otherlv_0, grammarAccess.getMathExpAccess().getLetKeyword_0());
             		
-            // InternalMathInterpreter.g:83:3: ( (lv_var_1_0= ruleVariable ) )
-            // InternalMathInterpreter.g:84:4: (lv_var_1_0= ruleVariable )
+            // InternalMathInterpreter.g:83:3: ( (lv_mathVar_1_0= ruleVariable ) )
+            // InternalMathInterpreter.g:84:4: (lv_mathVar_1_0= ruleVariable )
             {
-            // InternalMathInterpreter.g:84:4: (lv_var_1_0= ruleVariable )
-            // InternalMathInterpreter.g:85:5: lv_var_1_0= ruleVariable
+            // InternalMathInterpreter.g:84:4: (lv_mathVar_1_0= ruleVariable )
+            // InternalMathInterpreter.g:85:5: lv_mathVar_1_0= ruleVariable
             {
 
-            					newCompositeNode(grammarAccess.getMathExpAccess().getVarVariableParserRuleCall_1_0());
+            					newCompositeNode(grammarAccess.getMathExpAccess().getMathVarVariableParserRuleCall_1_0());
             				
             pushFollow(FOLLOW_4);
-            lv_var_1_0=ruleVariable();
+            lv_mathVar_1_0=ruleVariable();
 
             state._fsp--;
 
@@ -167,8 +167,8 @@ public class InternalMathInterpreterParser extends AbstractInternalAntlrParser {
             					}
             					set(
             						current,
-            						"var",
-            						lv_var_1_0,
+            						"mathVar",
+            						lv_mathVar_1_0,
             						"dk.klevang.MathInterpreter.Variable");
             					afterParserOrEnumRuleCall();
             				
@@ -1027,28 +1027,28 @@ public class InternalMathInterpreterParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleVariable"
-    // InternalMathInterpreter.g:396:1: ruleVariable returns [EObject current=null] : ( (lv_var_0_0= RULE_ID ) ) ;
+    // InternalMathInterpreter.g:396:1: ruleVariable returns [EObject current=null] : ( (lv_expVar_0_0= RULE_ID ) ) ;
     public final EObject ruleVariable() throws RecognitionException {
         EObject current = null;
 
-        Token lv_var_0_0=null;
+        Token lv_expVar_0_0=null;
 
 
         	enterRule();
 
         try {
-            // InternalMathInterpreter.g:402:2: ( ( (lv_var_0_0= RULE_ID ) ) )
-            // InternalMathInterpreter.g:403:2: ( (lv_var_0_0= RULE_ID ) )
+            // InternalMathInterpreter.g:402:2: ( ( (lv_expVar_0_0= RULE_ID ) ) )
+            // InternalMathInterpreter.g:403:2: ( (lv_expVar_0_0= RULE_ID ) )
             {
-            // InternalMathInterpreter.g:403:2: ( (lv_var_0_0= RULE_ID ) )
-            // InternalMathInterpreter.g:404:3: (lv_var_0_0= RULE_ID )
+            // InternalMathInterpreter.g:403:2: ( (lv_expVar_0_0= RULE_ID ) )
+            // InternalMathInterpreter.g:404:3: (lv_expVar_0_0= RULE_ID )
             {
-            // InternalMathInterpreter.g:404:3: (lv_var_0_0= RULE_ID )
-            // InternalMathInterpreter.g:405:4: lv_var_0_0= RULE_ID
+            // InternalMathInterpreter.g:404:3: (lv_expVar_0_0= RULE_ID )
+            // InternalMathInterpreter.g:405:4: lv_expVar_0_0= RULE_ID
             {
-            lv_var_0_0=(Token)match(input,RULE_ID,FOLLOW_2); 
+            lv_expVar_0_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
-            				newLeafNode(lv_var_0_0, grammarAccess.getVariableAccess().getVarIDTerminalRuleCall_0());
+            				newLeafNode(lv_expVar_0_0, grammarAccess.getVariableAccess().getExpVarIDTerminalRuleCall_0());
             			
 
             				if (current==null) {
@@ -1056,8 +1056,8 @@ public class InternalMathInterpreterParser extends AbstractInternalAntlrParser {
             				}
             				setWithLastConsumed(
             					current,
-            					"var",
-            					lv_var_0_0,
+            					"expVar",
+            					lv_expVar_0_0,
             					"org.eclipse.xtext.common.Terminals.ID");
             			
 

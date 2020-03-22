@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dk.klevang.mathInterpreter.Exp#getVar <em>Var</em>}</li>
+ *   <li>{@link dk.klevang.mathInterpreter.Exp#getExpVar <em>Exp Var</em>}</li>
  *   <li>{@link dk.klevang.mathInterpreter.Exp#getExp <em>Exp</em>}</li>
  *   <li>{@link dk.klevang.mathInterpreter.Exp#getMathExp <em>Math Exp</em>}</li>
  *   <li>{@link dk.klevang.mathInterpreter.Exp#getValue <em>Value</em>}</li>
@@ -29,26 +29,26 @@ import org.eclipse.emf.ecore.EObject;
 public interface Exp extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Var</b></em>' attribute.
+   * Returns the value of the '<em><b>Exp Var</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Var</em>' attribute.
-   * @see #setVar(String)
-   * @see dk.klevang.mathInterpreter.MathInterpreterPackage#getExp_Var()
+   * @return the value of the '<em>Exp Var</em>' attribute.
+   * @see #setExpVar(String)
+   * @see dk.klevang.mathInterpreter.MathInterpreterPackage#getExp_ExpVar()
    * @model
    * @generated
    */
-  String getVar();
+  String getExpVar();
 
   /**
-   * Sets the value of the '{@link dk.klevang.mathInterpreter.Exp#getVar <em>Var</em>}' attribute.
+   * Sets the value of the '{@link dk.klevang.mathInterpreter.Exp#getExpVar <em>Exp Var</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Var</em>' attribute.
-   * @see #getVar()
+   * @param value the new value of the '<em>Exp Var</em>' attribute.
+   * @see #getExpVar()
    * @generated
    */
-  void setVar(String value);
+  void setExpVar(String value);
 
   /**
    * Returns the value of the '<em><b>Exp</b></em>' containment reference.

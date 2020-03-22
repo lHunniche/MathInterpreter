@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dk.klevang.mathInterpreter.MathExp#getVar <em>Var</em>}</li>
+ *   <li>{@link dk.klevang.mathInterpreter.MathExp#getMathVar <em>Math Var</em>}</li>
  *   <li>{@link dk.klevang.mathInterpreter.MathExp#getExp <em>Exp</em>}</li>
  *   <li>{@link dk.klevang.mathInterpreter.MathExp#getLeft <em>Left</em>}</li>
  *   <li>{@link dk.klevang.mathInterpreter.MathExp#getRight <em>Right</em>}</li>
@@ -27,26 +27,26 @@ import org.eclipse.emf.ecore.EObject;
 public interface MathExp extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Var</b></em>' containment reference.
+   * Returns the value of the '<em><b>Math Var</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Var</em>' containment reference.
-   * @see #setVar(Exp)
-   * @see dk.klevang.mathInterpreter.MathInterpreterPackage#getMathExp_Var()
+   * @return the value of the '<em>Math Var</em>' containment reference.
+   * @see #setMathVar(Exp)
+   * @see dk.klevang.mathInterpreter.MathInterpreterPackage#getMathExp_MathVar()
    * @model containment="true"
    * @generated
    */
-  Exp getVar();
+  Exp getMathVar();
 
   /**
-   * Sets the value of the '{@link dk.klevang.mathInterpreter.MathExp#getVar <em>Var</em>}' containment reference.
+   * Sets the value of the '{@link dk.klevang.mathInterpreter.MathExp#getMathVar <em>Math Var</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Var</em>' containment reference.
-   * @see #getVar()
+   * @param value the new value of the '<em>Math Var</em>' containment reference.
+   * @see #getMathVar()
    * @generated
    */
-  void setVar(Exp value);
+  void setMathVar(Exp value);
 
   /**
    * Returns the value of the '<em><b>Exp</b></em>' containment reference.

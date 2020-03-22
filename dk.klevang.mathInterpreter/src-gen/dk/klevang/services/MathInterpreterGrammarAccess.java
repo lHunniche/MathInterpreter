@@ -27,8 +27,8 @@ public class MathInterpreterGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.klevang.MathInterpreter.MathExp");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cLetKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cVarAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cVarVariableParserRuleCall_1_0 = (RuleCall)cVarAssignment_1.eContents().get(0);
+		private final Assignment cMathVarAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cMathVarVariableParserRuleCall_1_0 = (RuleCall)cMathVarAssignment_1.eContents().get(0);
 		private final Keyword cEqualsSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cExpAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cExpExpParserRuleCall_3_0 = (RuleCall)cExpAssignment_3.eContents().get(0);
@@ -40,20 +40,20 @@ public class MathInterpreterGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cEndKeyword_4_3 = (Keyword)cGroup_4.eContents().get(3);
 		
 		//MathExp:
-		//	'let' var=Variable '=' exp=Exp ({MathExp.left=current} 'in' right=Exp 'end')*;
+		//	'let' mathVar=Variable '=' exp=Exp ({MathExp.left=current} 'in' right=Exp 'end')*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'let' var=Variable '=' exp=Exp ({MathExp.left=current} 'in' right=Exp 'end')*
+		//'let' mathVar=Variable '=' exp=Exp ({MathExp.left=current} 'in' right=Exp 'end')*
 		public Group getGroup() { return cGroup; }
 		
 		//'let'
 		public Keyword getLetKeyword_0() { return cLetKeyword_0; }
 		
-		//var=Variable
-		public Assignment getVarAssignment_1() { return cVarAssignment_1; }
+		//mathVar=Variable
+		public Assignment getMathVarAssignment_1() { return cMathVarAssignment_1; }
 		
 		//Variable
-		public RuleCall getVarVariableParserRuleCall_1_0() { return cVarVariableParserRuleCall_1_0; }
+		public RuleCall getMathVarVariableParserRuleCall_1_0() { return cMathVarVariableParserRuleCall_1_0; }
 		
 		//'='
 		public Keyword getEqualsSignKeyword_2() { return cEqualsSignKeyword_2; }
@@ -228,18 +228,18 @@ public class MathInterpreterGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	public class VariableElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.klevang.MathInterpreter.Variable");
-		private final Assignment cVarAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cVarIDTerminalRuleCall_0 = (RuleCall)cVarAssignment.eContents().get(0);
+		private final Assignment cExpVarAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cExpVarIDTerminalRuleCall_0 = (RuleCall)cExpVarAssignment.eContents().get(0);
 		
 		//Variable Exp:
-		//	var=ID;
+		//	expVar=ID;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//var=ID
-		public Assignment getVarAssignment() { return cVarAssignment; }
+		//expVar=ID
+		public Assignment getExpVarAssignment() { return cExpVarAssignment; }
 		
 		//ID
-		public RuleCall getVarIDTerminalRuleCall_0() { return cVarIDTerminalRuleCall_0; }
+		public RuleCall getExpVarIDTerminalRuleCall_0() { return cExpVarIDTerminalRuleCall_0; }
 	}
 	public class ParenthesisElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.klevang.MathInterpreter.Parenthesis");
@@ -365,7 +365,7 @@ public class MathInterpreterGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//MathExp:
-	//	'let' var=Variable '=' exp=Exp ({MathExp.left=current} 'in' right=Exp 'end')*;
+	//	'let' mathVar=Variable '=' exp=Exp ({MathExp.left=current} 'in' right=Exp 'end')*;
 	public MathExpElements getMathExpAccess() {
 		return pMathExp;
 	}
@@ -415,7 +415,7 @@ public class MathInterpreterGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Variable Exp:
-	//	var=ID;
+	//	expVar=ID;
 	public VariableElements getVariableAccess() {
 		return pVariable;
 	}

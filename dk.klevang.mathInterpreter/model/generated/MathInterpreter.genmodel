@@ -7,13 +7,13 @@
   <genPackages prefix="MathInterpreter" basePackage="dk.klevang" disposableProviderFactory="true"
       fileExtensions="lemvig" ecorePackage="MathInterpreter.ecore#/">
     <genClasses ecoreClass="MathInterpreter.ecore#//MathExp">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MathInterpreter.ecore#//MathExp/var"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MathInterpreter.ecore#//MathExp/mathVar"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MathInterpreter.ecore#//MathExp/exp"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MathInterpreter.ecore#//MathExp/left"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MathInterpreter.ecore#//MathExp/right"/>
     </genClasses>
     <genClasses ecoreClass="MathInterpreter.ecore#//Exp">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MathInterpreter.ecore#//Exp/var"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MathInterpreter.ecore#//Exp/expVar"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MathInterpreter.ecore#//Exp/exp"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MathInterpreter.ecore#//Exp/mathExp"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MathInterpreter.ecore#//Exp/value"/>

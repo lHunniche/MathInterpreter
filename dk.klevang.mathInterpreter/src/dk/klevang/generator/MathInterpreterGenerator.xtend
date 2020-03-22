@@ -18,6 +18,7 @@ import org.eclipse.xtext.generator.IGeneratorContext
 import static extension org.eclipse.emf.ecore.util.EcoreUtil.*
 import org.eclipse.xtext.ui.editor.hover.html.DefaultEObjectHoverProvider
 import org.eclipse.emf.ecore.EObject
+import java.util.HashMap
 
 /**
  * Generates code from your model files on save.
@@ -29,7 +30,7 @@ class MathInterpreterGenerator extends AbstractGenerator {
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		val math = resource.allContents.filter(MathExp).next
 		val result = math.compute
-		System.out.println("Math expression = "+math.display)
+		//System.out.println("Math expression = "+math.display)
 		// For +1 score, replace with hovering, see Bettini Chapter 8
 		JOptionPane.showMessageDialog(null, "result = "+result,"Math Language", JOptionPane.INFORMATION_MESSAGE)
 	}
@@ -40,45 +41,75 @@ class MathInterpreterGenerator extends AbstractGenerator {
 	//
 	
 	def int compute(MathExp math) {
-		System.out.println(math.exp)
-
-		math.exp.computeExp
+		val var_list = newHashMap
+		if (math.exp === null)
+		{
+			//this is when we have a let binding followed by "in" ... "end" keywords
+			val left = math.left.compute
+			var_list.put(math.left.getMathVar.getExpVar, left)
+			math.right.computeExp(var_list)
+		}	
+		else
+		{
+			//we have an ordinary let binding, e.g. "let x = 14" or "let x = 2+2"
+			math.exp.computeExp(null)
+		}
 	}
 	
-	def int computeExp(Exp exp) {
+	def int computeExp(Exp exp, HashMap<String, Integer> vars) {
 		if (exp.getExp !== null)
 		{
-			return exp.getExp.computeExp
+			// this is for when the expression is "empty" and a parenthesis.
+			// the computation continues on the current Exp's expression.
+			return exp.getExp.computeExp(vars)
 		}
-		val right = exp.right.computeBranch
+		else if (exp.getMathExp !== null)
+		{
+			// this is for nested let bindings
+			return exp.getMathExp.compute
+		}
+		val right = exp.right.computeBranch(vars)
 		
-		System.out.print("Exp: ")
-		System.out.println(exp)
 		switch exp {
-			Plus: exp.left.computeExp + right
-			Minus: exp.left.computeExp - right
-			Mult: exp.left.computeExp * right
-			Div: exp.left.computeExp / right
-			default: exp.computeBranch
+			Plus: exp.left.computeExp(vars) + right
+			Minus: exp.left.computeExp(vars) - right
+			Mult: exp.left.computeExp(vars) * right
+			Div: exp.left.computeExp(vars) / right
+			default: exp.computeBranch(vars)
 		}
 	}
 
-	def int computeBranch(Exp exp)
+	def int computeBranch(Exp exp, HashMap<String, Integer> vars)
 	{
 		if (exp !== null)
 		{
-			System.out.print("Branch: ")
-			System.out.println(exp)
 			switch exp {
-				Plus: return exp.computeExp
-				Minus: return exp.computeExp
-				Mult: return exp.computeExp
-				Div: return exp.computeExp
-				default: return exp.getValue()
+				Plus: return exp.computeExp(vars)
+				Minus: return exp.computeExp(vars)
+				Mult: return exp.computeExp(vars)
+				Div: return exp.computeExp(vars)
+				default: return exp.handleVariable(vars)
 			}
 		}
 		return -1000
 
+	}
+	
+	def int handleVariable(Exp exp, HashMap<String, Integer> vars)
+	{
+		if (exp.getExpVar() === null)
+		{
+			return exp.getValue()
+		}
+		else
+		{
+			val variable = vars.get(exp.getExpVar())
+			if (variable === null)
+			{
+				System.out.println("Variable is null, faaaaack")
+			}
+			return variable
+		}
 	}
 	
 	def int computeRightSide(Exp exp)

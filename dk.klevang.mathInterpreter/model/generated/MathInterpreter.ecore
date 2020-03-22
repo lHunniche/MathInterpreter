@@ -3,14 +3,15 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="mathInterpreter" nsURI="http://www.klevang.dk/MathInterpreter"
     nsPrefix="mathInterpreter">
   <eClassifiers xsi:type="ecore:EClass" name="MathExp">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="var" eType="#//Exp" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mathVar" eType="#//Exp"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="exp" eType="#//Exp" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//MathExp"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//Exp" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Exp">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="var" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="expVar" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="exp" eType="#//Exp" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mathExp" eType="#//MathExp"
         containment="true"/>

@@ -83,17 +83,17 @@ ruleMathExp returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getMathExpAccess().getVarVariableParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getMathExpAccess().getMathVarVariableParserRuleCall_1_0());
 				}
-				lv_var_1_0=ruleVariable
+				lv_mathVar_1_0=ruleVariable
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getMathExpRule());
 					}
 					set(
 						$current,
-						"var",
-						lv_var_1_0,
+						"mathVar",
+						lv_mathVar_1_0,
 						"dk.klevang.MathInterpreter.Variable");
 					afterParserOrEnumRuleCall();
 				}
@@ -402,9 +402,9 @@ ruleVariable returns [EObject current=null]
 }:
 	(
 		(
-			lv_var_0_0=RULE_ID
+			lv_expVar_0_0=RULE_ID
 			{
-				newLeafNode(lv_var_0_0, grammarAccess.getVariableAccess().getVarIDTerminalRuleCall_0());
+				newLeafNode(lv_expVar_0_0, grammarAccess.getVariableAccess().getExpVarIDTerminalRuleCall_0());
 			}
 			{
 				if ($current==null) {
@@ -412,8 +412,8 @@ ruleVariable returns [EObject current=null]
 				}
 				setWithLastConsumed(
 					$current,
-					"var",
-					lv_var_0_0,
+					"expVar",
+					lv_expVar_0_0,
 					"org.eclipse.xtext.common.Terminals.ID");
 			}
 		)

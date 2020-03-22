@@ -88,7 +88,7 @@ public class MathInterpreterSemanticSequencer extends AbstractDelegatingSemantic
 	 *     MathExp.MathExp_4_0 returns MathExp
 	 *
 	 * Constraint:
-	 *     ((var=Variable exp=Exp) | (left=MathExp_MathExp_4_0 right=Exp))
+	 *     ((mathVar=Variable exp=Exp) | (left=MathExp_MathExp_4_0 right=Exp))
 	 */
 	protected void sequence_MathExp(ISerializationContext context, MathExp semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -179,7 +179,7 @@ public class MathInterpreterSemanticSequencer extends AbstractDelegatingSemantic
 	 *     Primary returns Exp
 	 *
 	 * Constraint:
-	 *     (var=ID | exp=Exp | mathExp=MathExp | value=INT)
+	 *     (expVar=ID | exp=Exp | mathExp=MathExp | value=INT)
 	 */
 	protected void sequence_Number_Parenthesis_Variable(ISerializationContext context, Exp semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -251,15 +251,15 @@ public class MathInterpreterSemanticSequencer extends AbstractDelegatingSemantic
 	 *     Variable returns Exp
 	 *
 	 * Constraint:
-	 *     var=ID
+	 *     expVar=ID
 	 */
 	protected void sequence_Variable(ISerializationContext context, Exp semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MathInterpreterPackage.Literals.EXP__VAR) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MathInterpreterPackage.Literals.EXP__VAR));
+			if (transientValues.isValueTransient(semanticObject, MathInterpreterPackage.Literals.EXP__EXP_VAR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MathInterpreterPackage.Literals.EXP__EXP_VAR));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getVariableAccess().getVarIDTerminalRuleCall_0(), semanticObject.getVar());
+		feeder.accept(grammarAccess.getVariableAccess().getExpVarIDTerminalRuleCall_0(), semanticObject.getExpVar());
 		feeder.finish();
 	}
 	

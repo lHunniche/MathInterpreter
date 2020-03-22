@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dk.klevang.mathInterpreter.impl.ExpImpl#getVar <em>Var</em>}</li>
+ *   <li>{@link dk.klevang.mathInterpreter.impl.ExpImpl#getExpVar <em>Exp Var</em>}</li>
  *   <li>{@link dk.klevang.mathInterpreter.impl.ExpImpl#getExp <em>Exp</em>}</li>
  *   <li>{@link dk.klevang.mathInterpreter.impl.ExpImpl#getMathExp <em>Math Exp</em>}</li>
  *   <li>{@link dk.klevang.mathInterpreter.impl.ExpImpl#getValue <em>Value</em>}</li>
@@ -37,24 +37,24 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class ExpImpl extends MinimalEObjectImpl.Container implements Exp
 {
   /**
-   * The default value of the '{@link #getVar() <em>Var</em>}' attribute.
+   * The default value of the '{@link #getExpVar() <em>Exp Var</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVar()
+   * @see #getExpVar()
    * @generated
    * @ordered
    */
-  protected static final String VAR_EDEFAULT = null;
+  protected static final String EXP_VAR_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getVar() <em>Var</em>}' attribute.
+   * The cached value of the '{@link #getExpVar() <em>Exp Var</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVar()
+   * @see #getExpVar()
    * @generated
    * @ordered
    */
-  protected String var = VAR_EDEFAULT;
+  protected String expVar = EXP_VAR_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getExp() <em>Exp</em>}' containment reference.
@@ -143,9 +143,9 @@ public class ExpImpl extends MinimalEObjectImpl.Container implements Exp
    * @generated
    */
   @Override
-  public String getVar()
+  public String getExpVar()
   {
-    return var;
+    return expVar;
   }
 
   /**
@@ -154,12 +154,12 @@ public class ExpImpl extends MinimalEObjectImpl.Container implements Exp
    * @generated
    */
   @Override
-  public void setVar(String newVar)
+  public void setExpVar(String newExpVar)
   {
-    String oldVar = var;
-    var = newVar;
+    String oldExpVar = expVar;
+    expVar = newExpVar;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MathInterpreterPackage.EXP__VAR, oldVar, var));
+      eNotify(new ENotificationImpl(this, Notification.SET, MathInterpreterPackage.EXP__EXP_VAR, oldExpVar, expVar));
   }
 
   /**
@@ -419,8 +419,8 @@ public class ExpImpl extends MinimalEObjectImpl.Container implements Exp
   {
     switch (featureID)
     {
-      case MathInterpreterPackage.EXP__VAR:
-        return getVar();
+      case MathInterpreterPackage.EXP__EXP_VAR:
+        return getExpVar();
       case MathInterpreterPackage.EXP__EXP:
         return getExp();
       case MathInterpreterPackage.EXP__MATH_EXP:
@@ -445,8 +445,8 @@ public class ExpImpl extends MinimalEObjectImpl.Container implements Exp
   {
     switch (featureID)
     {
-      case MathInterpreterPackage.EXP__VAR:
-        setVar((String)newValue);
+      case MathInterpreterPackage.EXP__EXP_VAR:
+        setExpVar((String)newValue);
         return;
       case MathInterpreterPackage.EXP__EXP:
         setExp((Exp)newValue);
@@ -477,8 +477,8 @@ public class ExpImpl extends MinimalEObjectImpl.Container implements Exp
   {
     switch (featureID)
     {
-      case MathInterpreterPackage.EXP__VAR:
-        setVar(VAR_EDEFAULT);
+      case MathInterpreterPackage.EXP__EXP_VAR:
+        setExpVar(EXP_VAR_EDEFAULT);
         return;
       case MathInterpreterPackage.EXP__EXP:
         setExp((Exp)null);
@@ -509,8 +509,8 @@ public class ExpImpl extends MinimalEObjectImpl.Container implements Exp
   {
     switch (featureID)
     {
-      case MathInterpreterPackage.EXP__VAR:
-        return VAR_EDEFAULT == null ? var != null : !VAR_EDEFAULT.equals(var);
+      case MathInterpreterPackage.EXP__EXP_VAR:
+        return EXP_VAR_EDEFAULT == null ? expVar != null : !EXP_VAR_EDEFAULT.equals(expVar);
       case MathInterpreterPackage.EXP__EXP:
         return exp != null;
       case MathInterpreterPackage.EXP__MATH_EXP:
@@ -536,8 +536,8 @@ public class ExpImpl extends MinimalEObjectImpl.Container implements Exp
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (var: ");
-    result.append(var);
+    result.append(" (expVar: ");
+    result.append(expVar);
     result.append(", value: ");
     result.append(value);
     result.append(')');

@@ -3,7 +3,7 @@ grammar dk.klevang.MathInterpreter with org.eclipse.xtext.common.Terminals
 generate mathInterpreter "http://www.klevang.dk/MathInterpreter"
 
 MathExp:
-	'let' var=Variable '=' exp=Exp ({MathExp.left=current} 'in' right=Exp 'end')*
+	'let' mathVar=Variable '=' exp=Exp ({MathExp.left=current} 'in' right=Exp 'end')*
 ;
 
 Exp returns Exp:
@@ -29,7 +29,7 @@ Primary returns Exp:
 ;
 
 Variable returns Exp:
-	var=ID
+	expVar=ID
 ;
 
 Parenthesis returns Exp:

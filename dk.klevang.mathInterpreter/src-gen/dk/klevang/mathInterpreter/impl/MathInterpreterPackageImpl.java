@@ -149,7 +149,7 @@ public class MathInterpreterPackageImpl extends EPackageImpl implements MathInte
    * @generated
    */
   @Override
-  public EReference getMathExp_Var()
+  public EReference getMathExp_MathVar()
   {
     return (EReference)mathExpEClass.getEStructuralFeatures().get(0);
   }
@@ -204,7 +204,7 @@ public class MathInterpreterPackageImpl extends EPackageImpl implements MathInte
    * @generated
    */
   @Override
-  public EAttribute getExp_Var()
+  public EAttribute getExp_ExpVar()
   {
     return (EAttribute)expEClass.getEStructuralFeatures().get(0);
   }
@@ -340,13 +340,13 @@ public class MathInterpreterPackageImpl extends EPackageImpl implements MathInte
 
     // Create classes and their features
     mathExpEClass = createEClass(MATH_EXP);
-    createEReference(mathExpEClass, MATH_EXP__VAR);
+    createEReference(mathExpEClass, MATH_EXP__MATH_VAR);
     createEReference(mathExpEClass, MATH_EXP__EXP);
     createEReference(mathExpEClass, MATH_EXP__LEFT);
     createEReference(mathExpEClass, MATH_EXP__RIGHT);
 
     expEClass = createEClass(EXP);
-    createEAttribute(expEClass, EXP__VAR);
+    createEAttribute(expEClass, EXP__EXP_VAR);
     createEReference(expEClass, EXP__EXP);
     createEReference(expEClass, EXP__MATH_EXP);
     createEAttribute(expEClass, EXP__VALUE);
@@ -398,13 +398,13 @@ public class MathInterpreterPackageImpl extends EPackageImpl implements MathInte
 
     // Initialize classes and features; add operations and parameters
     initEClass(mathExpEClass, MathExp.class, "MathExp", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getMathExp_Var(), this.getExp(), null, "var", null, 0, 1, MathExp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMathExp_MathVar(), this.getExp(), null, "mathVar", null, 0, 1, MathExp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getMathExp_Exp(), this.getExp(), null, "exp", null, 0, 1, MathExp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getMathExp_Left(), this.getMathExp(), null, "left", null, 0, 1, MathExp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getMathExp_Right(), this.getExp(), null, "right", null, 0, 1, MathExp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(expEClass, Exp.class, "Exp", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getExp_Var(), ecorePackage.getEString(), "var", null, 0, 1, Exp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getExp_ExpVar(), ecorePackage.getEString(), "expVar", null, 0, 1, Exp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getExp_Exp(), this.getExp(), null, "exp", null, 0, 1, Exp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getExp_MathExp(), this.getMathExp(), null, "mathExp", null, 0, 1, Exp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getExp_Value(), ecorePackage.getEInt(), "value", null, 0, 1, Exp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -47,12 +47,12 @@ public class MathInterpreterParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getMulOrDivAccess().getGroup_1_0_1(), "rule__MulOrDiv__Group_1_0_1__0");
 			builder.put(grammarAccess.getParenthesisAccess().getGroup_0(), "rule__Parenthesis__Group_0__0");
 			builder.put(grammarAccess.getParenthesisAccess().getGroup_1(), "rule__Parenthesis__Group_1__0");
-			builder.put(grammarAccess.getMathExpAccess().getVarAssignment_1(), "rule__MathExp__VarAssignment_1");
+			builder.put(grammarAccess.getMathExpAccess().getMathVarAssignment_1(), "rule__MathExp__MathVarAssignment_1");
 			builder.put(grammarAccess.getMathExpAccess().getExpAssignment_3(), "rule__MathExp__ExpAssignment_3");
 			builder.put(grammarAccess.getMathExpAccess().getRightAssignment_4_2(), "rule__MathExp__RightAssignment_4_2");
 			builder.put(grammarAccess.getPlusOrMinusAccess().getRightAssignment_1_1(), "rule__PlusOrMinus__RightAssignment_1_1");
 			builder.put(grammarAccess.getMulOrDivAccess().getRightAssignment_1_1(), "rule__MulOrDiv__RightAssignment_1_1");
-			builder.put(grammarAccess.getVariableAccess().getVarAssignment(), "rule__Variable__VarAssignment");
+			builder.put(grammarAccess.getVariableAccess().getExpVarAssignment(), "rule__Variable__ExpVarAssignment");
 			builder.put(grammarAccess.getParenthesisAccess().getExpAssignment_0_1(), "rule__Parenthesis__ExpAssignment_0_1");
 			builder.put(grammarAccess.getParenthesisAccess().getMathExpAssignment_1_1(), "rule__Parenthesis__MathExpAssignment_1_1");
 			builder.put(grammarAccess.getNumberAccess().getValueAssignment(), "rule__Number__ValueAssignment");

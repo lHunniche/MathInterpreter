@@ -68,13 +68,13 @@ public interface MathInterpreterPackage extends EPackage
   int MATH_EXP = 0;
 
   /**
-   * The feature id for the '<em><b>Var</b></em>' containment reference.
+   * The feature id for the '<em><b>Math Var</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MATH_EXP__VAR = 0;
+  int MATH_EXP__MATH_VAR = 0;
 
   /**
    * The feature id for the '<em><b>Exp</b></em>' containment reference.
@@ -123,13 +123,13 @@ public interface MathInterpreterPackage extends EPackage
   int EXP = 1;
 
   /**
-   * The feature id for the '<em><b>Var</b></em>' attribute.
+   * The feature id for the '<em><b>Exp Var</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXP__VAR = 0;
+  int EXP__EXP_VAR = 0;
 
   /**
    * The feature id for the '<em><b>Exp</b></em>' containment reference.
@@ -196,13 +196,13 @@ public interface MathInterpreterPackage extends EPackage
   int PLUS = 2;
 
   /**
-   * The feature id for the '<em><b>Var</b></em>' attribute.
+   * The feature id for the '<em><b>Exp Var</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PLUS__VAR = EXP__VAR;
+  int PLUS__EXP_VAR = EXP__EXP_VAR;
 
   /**
    * The feature id for the '<em><b>Exp</b></em>' containment reference.
@@ -269,13 +269,13 @@ public interface MathInterpreterPackage extends EPackage
   int MINUS = 3;
 
   /**
-   * The feature id for the '<em><b>Var</b></em>' attribute.
+   * The feature id for the '<em><b>Exp Var</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MINUS__VAR = EXP__VAR;
+  int MINUS__EXP_VAR = EXP__EXP_VAR;
 
   /**
    * The feature id for the '<em><b>Exp</b></em>' containment reference.
@@ -342,13 +342,13 @@ public interface MathInterpreterPackage extends EPackage
   int MULT = 4;
 
   /**
-   * The feature id for the '<em><b>Var</b></em>' attribute.
+   * The feature id for the '<em><b>Exp Var</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MULT__VAR = EXP__VAR;
+  int MULT__EXP_VAR = EXP__EXP_VAR;
 
   /**
    * The feature id for the '<em><b>Exp</b></em>' containment reference.
@@ -415,13 +415,13 @@ public interface MathInterpreterPackage extends EPackage
   int DIV = 5;
 
   /**
-   * The feature id for the '<em><b>Var</b></em>' attribute.
+   * The feature id for the '<em><b>Exp Var</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DIV__VAR = EXP__VAR;
+  int DIV__EXP_VAR = EXP__EXP_VAR;
 
   /**
    * The feature id for the '<em><b>Exp</b></em>' containment reference.
@@ -489,15 +489,15 @@ public interface MathInterpreterPackage extends EPackage
   EClass getMathExp();
 
   /**
-   * Returns the meta object for the containment reference '{@link dk.klevang.mathInterpreter.MathExp#getVar <em>Var</em>}'.
+   * Returns the meta object for the containment reference '{@link dk.klevang.mathInterpreter.MathExp#getMathVar <em>Math Var</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Var</em>'.
-   * @see dk.klevang.mathInterpreter.MathExp#getVar()
+   * @return the meta object for the containment reference '<em>Math Var</em>'.
+   * @see dk.klevang.mathInterpreter.MathExp#getMathVar()
    * @see #getMathExp()
    * @generated
    */
-  EReference getMathExp_Var();
+  EReference getMathExp_MathVar();
 
   /**
    * Returns the meta object for the containment reference '{@link dk.klevang.mathInterpreter.MathExp#getExp <em>Exp</em>}'.
@@ -543,15 +543,15 @@ public interface MathInterpreterPackage extends EPackage
   EClass getExp();
 
   /**
-   * Returns the meta object for the attribute '{@link dk.klevang.mathInterpreter.Exp#getVar <em>Var</em>}'.
+   * Returns the meta object for the attribute '{@link dk.klevang.mathInterpreter.Exp#getExpVar <em>Exp Var</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Var</em>'.
-   * @see dk.klevang.mathInterpreter.Exp#getVar()
+   * @return the meta object for the attribute '<em>Exp Var</em>'.
+   * @see dk.klevang.mathInterpreter.Exp#getExpVar()
    * @see #getExp()
    * @generated
    */
-  EAttribute getExp_Var();
+  EAttribute getExp_ExpVar();
 
   /**
    * Returns the meta object for the containment reference '{@link dk.klevang.mathInterpreter.Exp#getExp <em>Exp</em>}'.
@@ -682,12 +682,12 @@ public interface MathInterpreterPackage extends EPackage
     EClass MATH_EXP = eINSTANCE.getMathExp();
 
     /**
-     * The meta object literal for the '<em><b>Var</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Math Var</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MATH_EXP__VAR = eINSTANCE.getMathExp_Var();
+    EReference MATH_EXP__MATH_VAR = eINSTANCE.getMathExp_MathVar();
 
     /**
      * The meta object literal for the '<em><b>Exp</b></em>' containment reference feature.
@@ -724,12 +724,12 @@ public interface MathInterpreterPackage extends EPackage
     EClass EXP = eINSTANCE.getExp();
 
     /**
-     * The meta object literal for the '<em><b>Var</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Exp Var</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute EXP__VAR = eINSTANCE.getExp_Var();
+    EAttribute EXP__EXP_VAR = eINSTANCE.getExp_ExpVar();
 
     /**
      * The meta object literal for the '<em><b>Exp</b></em>' containment reference feature.
