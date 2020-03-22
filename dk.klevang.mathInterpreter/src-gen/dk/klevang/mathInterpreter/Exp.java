@@ -14,7 +14,9 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link dk.klevang.mathInterpreter.Exp#getVar <em>Var</em>}</li>
  *   <li>{@link dk.klevang.mathInterpreter.Exp#getExp <em>Exp</em>}</li>
+ *   <li>{@link dk.klevang.mathInterpreter.Exp#getMathExp <em>Math Exp</em>}</li>
  *   <li>{@link dk.klevang.mathInterpreter.Exp#getValue <em>Value</em>}</li>
  *   <li>{@link dk.klevang.mathInterpreter.Exp#getLeft <em>Left</em>}</li>
  *   <li>{@link dk.klevang.mathInterpreter.Exp#getRight <em>Right</em>}</li>
@@ -26,6 +28,28 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Exp extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Var</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Var</em>' attribute.
+   * @see #setVar(String)
+   * @see dk.klevang.mathInterpreter.MathInterpreterPackage#getExp_Var()
+   * @model
+   * @generated
+   */
+  String getVar();
+
+  /**
+   * Sets the value of the '{@link dk.klevang.mathInterpreter.Exp#getVar <em>Var</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Var</em>' attribute.
+   * @see #getVar()
+   * @generated
+   */
+  void setVar(String value);
+
   /**
    * Returns the value of the '<em><b>Exp</b></em>' containment reference.
    * <!-- begin-user-doc -->
@@ -47,6 +71,28 @@ public interface Exp extends EObject
    * @generated
    */
   void setExp(Exp value);
+
+  /**
+   * Returns the value of the '<em><b>Math Exp</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Math Exp</em>' containment reference.
+   * @see #setMathExp(MathExp)
+   * @see dk.klevang.mathInterpreter.MathInterpreterPackage#getExp_MathExp()
+   * @model containment="true"
+   * @generated
+   */
+  MathExp getMathExp();
+
+  /**
+   * Sets the value of the '{@link dk.klevang.mathInterpreter.Exp#getMathExp <em>Math Exp</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Math Exp</em>' containment reference.
+   * @see #getMathExp()
+   * @generated
+   */
+  void setMathExp(MathExp value);
 
   /**
    * Returns the value of the '<em><b>Value</b></em>' attribute.

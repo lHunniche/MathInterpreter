@@ -35,7 +35,12 @@ public class MathInterpreterGenerator extends AbstractGenerator {
   }
   
   public int compute(final MathExp math) {
-    return this.computeExp(math.getExp());
+    int _xblockexpression = (int) 0;
+    {
+      System.out.println(math.getExp());
+      _xblockexpression = this.computeExp(math.getExp());
+    }
+    return _xblockexpression;
   }
   
   public int computeExp(final Exp exp) {

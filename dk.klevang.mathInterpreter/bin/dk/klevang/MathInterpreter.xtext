@@ -3,7 +3,7 @@ grammar dk.klevang.MathInterpreter with org.eclipse.xtext.common.Terminals
 generate mathInterpreter "http://www.klevang.dk/MathInterpreter"
 
 MathExp:
-	'result' 'is' exp=Exp
+	'let' var=Variable '=' exp=Exp ({MathExp.left=current} 'in' right=Exp 'end')*
 ;
 
 Exp returns Exp:
@@ -19,17 +19,21 @@ PlusOrMinus returns Exp:
 
 MulOrDiv returns Exp:
 	Primary (
-		({Mult.left=current} op='*' | {Div.left=current} op='/')
+		({Mult.left=current} '*' | {Div.left=current} '/')
 		right=Primary
 	)*
 ;
 
 Primary returns Exp:
-	Number | Parenthesis
+	Number | Parenthesis | Variable
+;
+
+Variable returns Exp:
+	var=ID
 ;
 
 Parenthesis returns Exp:
-	'(' exp=Exp ')'
+	'(' exp=Exp ')' | '(' mathExp=MathExp ')'
 ;
 
 Number returns Exp:

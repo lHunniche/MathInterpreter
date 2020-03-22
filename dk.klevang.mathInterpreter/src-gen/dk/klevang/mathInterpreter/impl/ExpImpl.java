@@ -4,6 +4,7 @@
 package dk.klevang.mathInterpreter.impl;
 
 import dk.klevang.mathInterpreter.Exp;
+import dk.klevang.mathInterpreter.MathExp;
 import dk.klevang.mathInterpreter.MathInterpreterPackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -23,7 +24,9 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link dk.klevang.mathInterpreter.impl.ExpImpl#getVar <em>Var</em>}</li>
  *   <li>{@link dk.klevang.mathInterpreter.impl.ExpImpl#getExp <em>Exp</em>}</li>
+ *   <li>{@link dk.klevang.mathInterpreter.impl.ExpImpl#getMathExp <em>Math Exp</em>}</li>
  *   <li>{@link dk.klevang.mathInterpreter.impl.ExpImpl#getValue <em>Value</em>}</li>
  *   <li>{@link dk.klevang.mathInterpreter.impl.ExpImpl#getLeft <em>Left</em>}</li>
  *   <li>{@link dk.klevang.mathInterpreter.impl.ExpImpl#getRight <em>Right</em>}</li>
@@ -34,6 +37,26 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class ExpImpl extends MinimalEObjectImpl.Container implements Exp
 {
   /**
+   * The default value of the '{@link #getVar() <em>Var</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVar()
+   * @generated
+   * @ordered
+   */
+  protected static final String VAR_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getVar() <em>Var</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVar()
+   * @generated
+   * @ordered
+   */
+  protected String var = VAR_EDEFAULT;
+
+  /**
    * The cached value of the '{@link #getExp() <em>Exp</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -42,6 +65,16 @@ public class ExpImpl extends MinimalEObjectImpl.Container implements Exp
    * @ordered
    */
   protected Exp exp;
+
+  /**
+   * The cached value of the '{@link #getMathExp() <em>Math Exp</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMathExp()
+   * @generated
+   * @ordered
+   */
+  protected MathExp mathExp;
 
   /**
    * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
@@ -110,6 +143,31 @@ public class ExpImpl extends MinimalEObjectImpl.Container implements Exp
    * @generated
    */
   @Override
+  public String getVar()
+  {
+    return var;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setVar(String newVar)
+  {
+    String oldVar = var;
+    var = newVar;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MathInterpreterPackage.EXP__VAR, oldVar, var));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Exp getExp()
   {
     return exp;
@@ -152,6 +210,56 @@ public class ExpImpl extends MinimalEObjectImpl.Container implements Exp
     }
     else if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, MathInterpreterPackage.EXP__EXP, newExp, newExp));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public MathExp getMathExp()
+  {
+    return mathExp;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetMathExp(MathExp newMathExp, NotificationChain msgs)
+  {
+    MathExp oldMathExp = mathExp;
+    mathExp = newMathExp;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MathInterpreterPackage.EXP__MATH_EXP, oldMathExp, newMathExp);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setMathExp(MathExp newMathExp)
+  {
+    if (newMathExp != mathExp)
+    {
+      NotificationChain msgs = null;
+      if (mathExp != null)
+        msgs = ((InternalEObject)mathExp).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MathInterpreterPackage.EXP__MATH_EXP, null, msgs);
+      if (newMathExp != null)
+        msgs = ((InternalEObject)newMathExp).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MathInterpreterPackage.EXP__MATH_EXP, null, msgs);
+      msgs = basicSetMathExp(newMathExp, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MathInterpreterPackage.EXP__MATH_EXP, newMathExp, newMathExp));
   }
 
   /**
@@ -291,6 +399,8 @@ public class ExpImpl extends MinimalEObjectImpl.Container implements Exp
     {
       case MathInterpreterPackage.EXP__EXP:
         return basicSetExp(null, msgs);
+      case MathInterpreterPackage.EXP__MATH_EXP:
+        return basicSetMathExp(null, msgs);
       case MathInterpreterPackage.EXP__LEFT:
         return basicSetLeft(null, msgs);
       case MathInterpreterPackage.EXP__RIGHT:
@@ -309,8 +419,12 @@ public class ExpImpl extends MinimalEObjectImpl.Container implements Exp
   {
     switch (featureID)
     {
+      case MathInterpreterPackage.EXP__VAR:
+        return getVar();
       case MathInterpreterPackage.EXP__EXP:
         return getExp();
+      case MathInterpreterPackage.EXP__MATH_EXP:
+        return getMathExp();
       case MathInterpreterPackage.EXP__VALUE:
         return getValue();
       case MathInterpreterPackage.EXP__LEFT:
@@ -331,8 +445,14 @@ public class ExpImpl extends MinimalEObjectImpl.Container implements Exp
   {
     switch (featureID)
     {
+      case MathInterpreterPackage.EXP__VAR:
+        setVar((String)newValue);
+        return;
       case MathInterpreterPackage.EXP__EXP:
         setExp((Exp)newValue);
+        return;
+      case MathInterpreterPackage.EXP__MATH_EXP:
+        setMathExp((MathExp)newValue);
         return;
       case MathInterpreterPackage.EXP__VALUE:
         setValue((Integer)newValue);
@@ -357,8 +477,14 @@ public class ExpImpl extends MinimalEObjectImpl.Container implements Exp
   {
     switch (featureID)
     {
+      case MathInterpreterPackage.EXP__VAR:
+        setVar(VAR_EDEFAULT);
+        return;
       case MathInterpreterPackage.EXP__EXP:
         setExp((Exp)null);
+        return;
+      case MathInterpreterPackage.EXP__MATH_EXP:
+        setMathExp((MathExp)null);
         return;
       case MathInterpreterPackage.EXP__VALUE:
         setValue(VALUE_EDEFAULT);
@@ -383,8 +509,12 @@ public class ExpImpl extends MinimalEObjectImpl.Container implements Exp
   {
     switch (featureID)
     {
+      case MathInterpreterPackage.EXP__VAR:
+        return VAR_EDEFAULT == null ? var != null : !VAR_EDEFAULT.equals(var);
       case MathInterpreterPackage.EXP__EXP:
         return exp != null;
+      case MathInterpreterPackage.EXP__MATH_EXP:
+        return mathExp != null;
       case MathInterpreterPackage.EXP__VALUE:
         return value != VALUE_EDEFAULT;
       case MathInterpreterPackage.EXP__LEFT:
@@ -406,7 +536,9 @@ public class ExpImpl extends MinimalEObjectImpl.Container implements Exp
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (value: ");
+    result.append(" (var: ");
+    result.append(var);
+    result.append(", value: ");
     result.append(value);
     result.append(')');
     return result.toString();

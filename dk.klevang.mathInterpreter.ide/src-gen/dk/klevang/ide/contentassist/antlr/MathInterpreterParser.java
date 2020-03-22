@@ -34,7 +34,9 @@ public class MathInterpreterParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getPlusOrMinusAccess().getAlternatives_1_0(), "rule__PlusOrMinus__Alternatives_1_0");
 			builder.put(grammarAccess.getMulOrDivAccess().getAlternatives_1_0(), "rule__MulOrDiv__Alternatives_1_0");
 			builder.put(grammarAccess.getPrimaryAccess().getAlternatives(), "rule__Primary__Alternatives");
+			builder.put(grammarAccess.getParenthesisAccess().getAlternatives(), "rule__Parenthesis__Alternatives");
 			builder.put(grammarAccess.getMathExpAccess().getGroup(), "rule__MathExp__Group__0");
+			builder.put(grammarAccess.getMathExpAccess().getGroup_4(), "rule__MathExp__Group_4__0");
 			builder.put(grammarAccess.getPlusOrMinusAccess().getGroup(), "rule__PlusOrMinus__Group__0");
 			builder.put(grammarAccess.getPlusOrMinusAccess().getGroup_1(), "rule__PlusOrMinus__Group_1__0");
 			builder.put(grammarAccess.getPlusOrMinusAccess().getGroup_1_0_0(), "rule__PlusOrMinus__Group_1_0_0__0");
@@ -43,13 +45,16 @@ public class MathInterpreterParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getMulOrDivAccess().getGroup_1(), "rule__MulOrDiv__Group_1__0");
 			builder.put(grammarAccess.getMulOrDivAccess().getGroup_1_0_0(), "rule__MulOrDiv__Group_1_0_0__0");
 			builder.put(grammarAccess.getMulOrDivAccess().getGroup_1_0_1(), "rule__MulOrDiv__Group_1_0_1__0");
-			builder.put(grammarAccess.getParenthesisAccess().getGroup(), "rule__Parenthesis__Group__0");
-			builder.put(grammarAccess.getMathExpAccess().getExpAssignment_2(), "rule__MathExp__ExpAssignment_2");
+			builder.put(grammarAccess.getParenthesisAccess().getGroup_0(), "rule__Parenthesis__Group_0__0");
+			builder.put(grammarAccess.getParenthesisAccess().getGroup_1(), "rule__Parenthesis__Group_1__0");
+			builder.put(grammarAccess.getMathExpAccess().getVarAssignment_1(), "rule__MathExp__VarAssignment_1");
+			builder.put(grammarAccess.getMathExpAccess().getExpAssignment_3(), "rule__MathExp__ExpAssignment_3");
+			builder.put(grammarAccess.getMathExpAccess().getRightAssignment_4_2(), "rule__MathExp__RightAssignment_4_2");
 			builder.put(grammarAccess.getPlusOrMinusAccess().getRightAssignment_1_1(), "rule__PlusOrMinus__RightAssignment_1_1");
-			builder.put(grammarAccess.getMulOrDivAccess().getOpAssignment_1_0_0_1(), "rule__MulOrDiv__OpAssignment_1_0_0_1");
-			builder.put(grammarAccess.getMulOrDivAccess().getOpAssignment_1_0_1_1(), "rule__MulOrDiv__OpAssignment_1_0_1_1");
 			builder.put(grammarAccess.getMulOrDivAccess().getRightAssignment_1_1(), "rule__MulOrDiv__RightAssignment_1_1");
-			builder.put(grammarAccess.getParenthesisAccess().getExpAssignment_1(), "rule__Parenthesis__ExpAssignment_1");
+			builder.put(grammarAccess.getVariableAccess().getVarAssignment(), "rule__Variable__VarAssignment");
+			builder.put(grammarAccess.getParenthesisAccess().getExpAssignment_0_1(), "rule__Parenthesis__ExpAssignment_0_1");
+			builder.put(grammarAccess.getParenthesisAccess().getMathExpAssignment_1_1(), "rule__Parenthesis__MathExpAssignment_1_1");
 			builder.put(grammarAccess.getNumberAccess().getValueAssignment(), "rule__Number__ValueAssignment");
 		}
 	}

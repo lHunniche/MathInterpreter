@@ -40,8 +40,8 @@ class MathInterpreterGenerator extends AbstractGenerator {
 	//
 	
 	def int compute(MathExp math) {
-		//System.out.println("TopExp")
-		//System.out.println(math.exp)
+		System.out.println(math.exp)
+
 		math.exp.computeExp
 	}
 	
@@ -62,16 +62,6 @@ class MathInterpreterGenerator extends AbstractGenerator {
 			default: exp.computeBranch
 		}
 	}
-	
-//	def int computePrim(Primary factor) {
-//		System.out.println(factor)
-//		
-//		switch factor {
-//			Number: factor.getValue()
-//			Parenthesis: factor.getExp().computeExp
-//			default: -1000
-//		}
-//	}
 
 	def int computeBranch(Exp exp)
 	{

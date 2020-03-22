@@ -14,7 +14,10 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link dk.klevang.mathInterpreter.MathExp#getVar <em>Var</em>}</li>
  *   <li>{@link dk.klevang.mathInterpreter.MathExp#getExp <em>Exp</em>}</li>
+ *   <li>{@link dk.klevang.mathInterpreter.MathExp#getLeft <em>Left</em>}</li>
+ *   <li>{@link dk.klevang.mathInterpreter.MathExp#getRight <em>Right</em>}</li>
  * </ul>
  *
  * @see dk.klevang.mathInterpreter.MathInterpreterPackage#getMathExp()
@@ -23,6 +26,28 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface MathExp extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Var</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Var</em>' containment reference.
+   * @see #setVar(Exp)
+   * @see dk.klevang.mathInterpreter.MathInterpreterPackage#getMathExp_Var()
+   * @model containment="true"
+   * @generated
+   */
+  Exp getVar();
+
+  /**
+   * Sets the value of the '{@link dk.klevang.mathInterpreter.MathExp#getVar <em>Var</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Var</em>' containment reference.
+   * @see #getVar()
+   * @generated
+   */
+  void setVar(Exp value);
+
   /**
    * Returns the value of the '<em><b>Exp</b></em>' containment reference.
    * <!-- begin-user-doc -->
@@ -44,5 +69,49 @@ public interface MathExp extends EObject
    * @generated
    */
   void setExp(Exp value);
+
+  /**
+   * Returns the value of the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Left</em>' containment reference.
+   * @see #setLeft(MathExp)
+   * @see dk.klevang.mathInterpreter.MathInterpreterPackage#getMathExp_Left()
+   * @model containment="true"
+   * @generated
+   */
+  MathExp getLeft();
+
+  /**
+   * Sets the value of the '{@link dk.klevang.mathInterpreter.MathExp#getLeft <em>Left</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Left</em>' containment reference.
+   * @see #getLeft()
+   * @generated
+   */
+  void setLeft(MathExp value);
+
+  /**
+   * Returns the value of the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Right</em>' containment reference.
+   * @see #setRight(Exp)
+   * @see dk.klevang.mathInterpreter.MathInterpreterPackage#getMathExp_Right()
+   * @model containment="true"
+   * @generated
+   */
+  Exp getRight();
+
+  /**
+   * Sets the value of the '{@link dk.klevang.mathInterpreter.MathExp#getRight <em>Right</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Right</em>' containment reference.
+   * @see #getRight()
+   * @generated
+   */
+  void setRight(Exp value);
 
 } // MathExp

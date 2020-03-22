@@ -149,9 +149,42 @@ public class MathInterpreterPackageImpl extends EPackageImpl implements MathInte
    * @generated
    */
   @Override
-  public EReference getMathExp_Exp()
+  public EReference getMathExp_Var()
   {
     return (EReference)mathExpEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getMathExp_Exp()
+  {
+    return (EReference)mathExpEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getMathExp_Left()
+  {
+    return (EReference)mathExpEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getMathExp_Right()
+  {
+    return (EReference)mathExpEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -171,9 +204,20 @@ public class MathInterpreterPackageImpl extends EPackageImpl implements MathInte
    * @generated
    */
   @Override
+  public EAttribute getExp_Var()
+  {
+    return (EAttribute)expEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EReference getExp_Exp()
   {
-    return (EReference)expEClass.getEStructuralFeatures().get(0);
+    return (EReference)expEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -182,18 +226,7 @@ public class MathInterpreterPackageImpl extends EPackageImpl implements MathInte
    * @generated
    */
   @Override
-  public EAttribute getExp_Value()
-  {
-    return (EAttribute)expEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getExp_Left()
+  public EReference getExp_MathExp()
   {
     return (EReference)expEClass.getEStructuralFeatures().get(2);
   }
@@ -204,9 +237,31 @@ public class MathInterpreterPackageImpl extends EPackageImpl implements MathInte
    * @generated
    */
   @Override
+  public EAttribute getExp_Value()
+  {
+    return (EAttribute)expEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getExp_Left()
+  {
+    return (EReference)expEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EReference getExp_Right()
   {
-    return (EReference)expEClass.getEStructuralFeatures().get(3);
+    return (EReference)expEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -248,31 +303,9 @@ public class MathInterpreterPackageImpl extends EPackageImpl implements MathInte
    * @generated
    */
   @Override
-  public EAttribute getMult_Op()
-  {
-    return (EAttribute)multEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EClass getDiv()
   {
     return divEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getDiv_Op()
-  {
-    return (EAttribute)divEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -307,10 +340,15 @@ public class MathInterpreterPackageImpl extends EPackageImpl implements MathInte
 
     // Create classes and their features
     mathExpEClass = createEClass(MATH_EXP);
+    createEReference(mathExpEClass, MATH_EXP__VAR);
     createEReference(mathExpEClass, MATH_EXP__EXP);
+    createEReference(mathExpEClass, MATH_EXP__LEFT);
+    createEReference(mathExpEClass, MATH_EXP__RIGHT);
 
     expEClass = createEClass(EXP);
+    createEAttribute(expEClass, EXP__VAR);
     createEReference(expEClass, EXP__EXP);
+    createEReference(expEClass, EXP__MATH_EXP);
     createEAttribute(expEClass, EXP__VALUE);
     createEReference(expEClass, EXP__LEFT);
     createEReference(expEClass, EXP__RIGHT);
@@ -320,10 +358,8 @@ public class MathInterpreterPackageImpl extends EPackageImpl implements MathInte
     minusEClass = createEClass(MINUS);
 
     multEClass = createEClass(MULT);
-    createEAttribute(multEClass, MULT__OP);
 
     divEClass = createEClass(DIV);
-    createEAttribute(divEClass, DIV__OP);
   }
 
   /**
@@ -362,10 +398,15 @@ public class MathInterpreterPackageImpl extends EPackageImpl implements MathInte
 
     // Initialize classes and features; add operations and parameters
     initEClass(mathExpEClass, MathExp.class, "MathExp", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getMathExp_Var(), this.getExp(), null, "var", null, 0, 1, MathExp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getMathExp_Exp(), this.getExp(), null, "exp", null, 0, 1, MathExp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMathExp_Left(), this.getMathExp(), null, "left", null, 0, 1, MathExp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMathExp_Right(), this.getExp(), null, "right", null, 0, 1, MathExp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(expEClass, Exp.class, "Exp", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getExp_Var(), ecorePackage.getEString(), "var", null, 0, 1, Exp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getExp_Exp(), this.getExp(), null, "exp", null, 0, 1, Exp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getExp_MathExp(), this.getMathExp(), null, "mathExp", null, 0, 1, Exp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getExp_Value(), ecorePackage.getEInt(), "value", null, 0, 1, Exp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getExp_Left(), this.getExp(), null, "left", null, 0, 1, Exp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getExp_Right(), this.getExp(), null, "right", null, 0, 1, Exp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -375,10 +416,8 @@ public class MathInterpreterPackageImpl extends EPackageImpl implements MathInte
     initEClass(minusEClass, Minus.class, "Minus", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(multEClass, Mult.class, "Mult", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getMult_Op(), ecorePackage.getEString(), "op", null, 0, 1, Mult.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(divEClass, Div.class, "Div", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getDiv_Op(), ecorePackage.getEString(), "op", null, 0, 1, Div.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

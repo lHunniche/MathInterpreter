@@ -24,13 +24,26 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link dk.klevang.mathInterpreter.impl.MathExpImpl#getVar <em>Var</em>}</li>
  *   <li>{@link dk.klevang.mathInterpreter.impl.MathExpImpl#getExp <em>Exp</em>}</li>
+ *   <li>{@link dk.klevang.mathInterpreter.impl.MathExpImpl#getLeft <em>Left</em>}</li>
+ *   <li>{@link dk.klevang.mathInterpreter.impl.MathExpImpl#getRight <em>Right</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class MathExpImpl extends MinimalEObjectImpl.Container implements MathExp
 {
+  /**
+   * The cached value of the '{@link #getVar() <em>Var</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVar()
+   * @generated
+   * @ordered
+   */
+  protected Exp var;
+
   /**
    * The cached value of the '{@link #getExp() <em>Exp</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -40,6 +53,26 @@ public class MathExpImpl extends MinimalEObjectImpl.Container implements MathExp
    * @ordered
    */
   protected Exp exp;
+
+  /**
+   * The cached value of the '{@link #getLeft() <em>Left</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getLeft()
+   * @generated
+   * @ordered
+   */
+  protected MathExp left;
+
+  /**
+   * The cached value of the '{@link #getRight() <em>Right</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getRight()
+   * @generated
+   * @ordered
+   */
+  protected Exp right;
 
   /**
    * <!-- begin-user-doc -->
@@ -60,6 +93,56 @@ public class MathExpImpl extends MinimalEObjectImpl.Container implements MathExp
   protected EClass eStaticClass()
   {
     return MathInterpreterPackage.Literals.MATH_EXP;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Exp getVar()
+  {
+    return var;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetVar(Exp newVar, NotificationChain msgs)
+  {
+    Exp oldVar = var;
+    var = newVar;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MathInterpreterPackage.MATH_EXP__VAR, oldVar, newVar);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setVar(Exp newVar)
+  {
+    if (newVar != var)
+    {
+      NotificationChain msgs = null;
+      if (var != null)
+        msgs = ((InternalEObject)var).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MathInterpreterPackage.MATH_EXP__VAR, null, msgs);
+      if (newVar != null)
+        msgs = ((InternalEObject)newVar).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MathInterpreterPackage.MATH_EXP__VAR, null, msgs);
+      msgs = basicSetVar(newVar, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MathInterpreterPackage.MATH_EXP__VAR, newVar, newVar));
   }
 
   /**
@@ -118,12 +201,118 @@ public class MathExpImpl extends MinimalEObjectImpl.Container implements MathExp
    * @generated
    */
   @Override
+  public MathExp getLeft()
+  {
+    return left;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetLeft(MathExp newLeft, NotificationChain msgs)
+  {
+    MathExp oldLeft = left;
+    left = newLeft;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MathInterpreterPackage.MATH_EXP__LEFT, oldLeft, newLeft);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setLeft(MathExp newLeft)
+  {
+    if (newLeft != left)
+    {
+      NotificationChain msgs = null;
+      if (left != null)
+        msgs = ((InternalEObject)left).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MathInterpreterPackage.MATH_EXP__LEFT, null, msgs);
+      if (newLeft != null)
+        msgs = ((InternalEObject)newLeft).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MathInterpreterPackage.MATH_EXP__LEFT, null, msgs);
+      msgs = basicSetLeft(newLeft, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MathInterpreterPackage.MATH_EXP__LEFT, newLeft, newLeft));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Exp getRight()
+  {
+    return right;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetRight(Exp newRight, NotificationChain msgs)
+  {
+    Exp oldRight = right;
+    right = newRight;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MathInterpreterPackage.MATH_EXP__RIGHT, oldRight, newRight);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setRight(Exp newRight)
+  {
+    if (newRight != right)
+    {
+      NotificationChain msgs = null;
+      if (right != null)
+        msgs = ((InternalEObject)right).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MathInterpreterPackage.MATH_EXP__RIGHT, null, msgs);
+      if (newRight != null)
+        msgs = ((InternalEObject)newRight).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MathInterpreterPackage.MATH_EXP__RIGHT, null, msgs);
+      msgs = basicSetRight(newRight, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MathInterpreterPackage.MATH_EXP__RIGHT, newRight, newRight));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
     {
+      case MathInterpreterPackage.MATH_EXP__VAR:
+        return basicSetVar(null, msgs);
       case MathInterpreterPackage.MATH_EXP__EXP:
         return basicSetExp(null, msgs);
+      case MathInterpreterPackage.MATH_EXP__LEFT:
+        return basicSetLeft(null, msgs);
+      case MathInterpreterPackage.MATH_EXP__RIGHT:
+        return basicSetRight(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -138,8 +327,14 @@ public class MathExpImpl extends MinimalEObjectImpl.Container implements MathExp
   {
     switch (featureID)
     {
+      case MathInterpreterPackage.MATH_EXP__VAR:
+        return getVar();
       case MathInterpreterPackage.MATH_EXP__EXP:
         return getExp();
+      case MathInterpreterPackage.MATH_EXP__LEFT:
+        return getLeft();
+      case MathInterpreterPackage.MATH_EXP__RIGHT:
+        return getRight();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -154,8 +349,17 @@ public class MathExpImpl extends MinimalEObjectImpl.Container implements MathExp
   {
     switch (featureID)
     {
+      case MathInterpreterPackage.MATH_EXP__VAR:
+        setVar((Exp)newValue);
+        return;
       case MathInterpreterPackage.MATH_EXP__EXP:
         setExp((Exp)newValue);
+        return;
+      case MathInterpreterPackage.MATH_EXP__LEFT:
+        setLeft((MathExp)newValue);
+        return;
+      case MathInterpreterPackage.MATH_EXP__RIGHT:
+        setRight((Exp)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -171,8 +375,17 @@ public class MathExpImpl extends MinimalEObjectImpl.Container implements MathExp
   {
     switch (featureID)
     {
+      case MathInterpreterPackage.MATH_EXP__VAR:
+        setVar((Exp)null);
+        return;
       case MathInterpreterPackage.MATH_EXP__EXP:
         setExp((Exp)null);
+        return;
+      case MathInterpreterPackage.MATH_EXP__LEFT:
+        setLeft((MathExp)null);
+        return;
+      case MathInterpreterPackage.MATH_EXP__RIGHT:
+        setRight((Exp)null);
         return;
     }
     super.eUnset(featureID);
@@ -188,8 +401,14 @@ public class MathExpImpl extends MinimalEObjectImpl.Container implements MathExp
   {
     switch (featureID)
     {
+      case MathInterpreterPackage.MATH_EXP__VAR:
+        return var != null;
       case MathInterpreterPackage.MATH_EXP__EXP:
         return exp != null;
+      case MathInterpreterPackage.MATH_EXP__LEFT:
+        return left != null;
+      case MathInterpreterPackage.MATH_EXP__RIGHT:
+        return right != null;
     }
     return super.eIsSet(featureID);
   }
